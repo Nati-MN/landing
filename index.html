@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MANETIQ – Webseite, Google-Profil und Social Media für Geschäfte in Wien</title>
-<meta name="description" content="Webseite, Google-Unternehmensprofil und Social Media für kleine Geschäfte in Wien. Ein Ansprechpartner, fixe Monatspreise, Gratis-Check.">
-<meta property="og:title" content="MANETIQ – damit man Ihr Geschäft im Grätzl findet">
-<meta property="og:description" content="Webseite, Google-Profil und Social Media für Geschäfte in Wien.">
+<title>MANETIQ – IT-Lösungen für Ihr Geschäft, wo immer Sie sind</title>
+<meta name="description" content="Webseite, Google-Profil, Social Media und IT-Lösungen für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, Gratis-Check.">
+<meta property="og:title" content="MANETIQ – Lösungen für Ihr Geschäft, wo immer Sie sind">
+<meta property="og:description" content="Webseite, Google-Profil, Social Media und IT-Lösungen für kleine Unternehmen.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
@@ -24,19 +24,23 @@
   --rot:#007BFF;       /* Tech-Blau: Knöpfe und Akzente */
   --rot-hover:#0066D6;
   --cyan:#00D4FF;      /* Cyan: nur kleine Highlights */
-  --tinte:#0B1F3B;     /* Text */
-  --grau:#56627A;      /* leiser Text */
-  --linie:#DDE2EA;
-  --flaeche:#F2F4F7;   /* Hellgrau: neutral, professionell */
-  --weiss:#FFFFFF;
+  --tinte:#EEF3FA;     /* Text (hell auf dunkel) */
+  --grau:#9FB0C8;      /* leiser Text */
+  --linie:rgba(242,244,247,.14);
+  --flaeche:#0B1F3B;   /* Dunkelblau: abwechselnde Abschnitte */
+  --weiss:#061429;     /* Seitenhintergrund, noch dunkler */
+  --karte:#102A4D;     /* Karten und Formular */
+  --hellgrau:#F2F4F7;  /* Hellgrau aus der Palette */
+  --link:#4DA6FF;      /* Tech-Blau, aufgehellt für Text auf dunkel */
   --gruen:#1E7F4F;
   --r:14px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html{color-scheme:dark}
 body{margin:0;font-family:Archivo,system-ui,sans-serif;font-stretch:100%;color:var(--tinte);background:var(--weiss);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:var(--rot)}
+a{color:var(--link)}
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-stretch:112%;line-height:1.1;margin:0;letter-spacing:-.01em}
@@ -67,7 +71,7 @@ p{margin:0}
 /* Hero */
 .hero{padding:72px 0 88px;background:linear-gradient(var(--weiss),var(--weiss)) }
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(40px,5.6vw,68px);font-weight:800;font-stretch:115%;max-width:13ch}
+.hero h1{font-size:clamp(40px,5.6vw,68px);font-weight:800;font-stretch:115%;max-width:14ch}
 .hero .lead{font-size:21px;margin-top:22px;max-width:34ch;color:#2F3A4C}
 .hero .knoepfe{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero .fakten{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;padding:0;list-style:none;font-size:16px;color:var(--grau)}
@@ -222,6 +226,43 @@ footer .fuss-logo{height:52px;width:auto;margin-bottom:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
 footer a{color:#fff;margin-left:20px}
 
+
+/* ===== Dunkler Modus: Feinschliff ===== */
+.kopf{background:rgba(6,20,41,.9);border-bottom-color:var(--linie)}
+.logo{color:#fff}
+.nav a{color:var(--tinte)}
+.nav a:hover{color:var(--cyan)}
+.btn-linie{border-color:var(--link);color:var(--link)}
+.btn-linie:hover{background:rgba(77,166,255,.12)}
+.hero{background:radial-gradient(900px 500px at 85% 30%,rgba(0,123,255,.22),transparent 70%),var(--weiss)}
+.hero .lead{color:#C9D6EA}
+.handy{color:#0B1F3B;--grau:#56627A;--linie:#DDE2EA;border-color:#22395E;box-shadow:0 30px 70px -20px rgba(0,123,255,.35)}
+.suche{color:#0B1F3B}
+.zettel{background:var(--rot);color:#fff}
+.zettel::before{border-right-color:var(--rot)}
+.leistungen{border-top-color:var(--cyan)}
+.leistung p,.leistung ul,.ablauf p,.faq details p{color:#C3D0E3}
+.leistung svg{color:var(--cyan)}
+.paket{background:var(--karte);border-color:var(--linie)}
+.paket .marke{color:#fff}
+.ablauf li:not(:last-child)::after{background:var(--linie)}
+.ablauf .dauer{color:var(--link)}
+.fenster{background:var(--karte);border-color:var(--linie)}
+.fenster .leiste{background:#14325C;border-bottom-color:var(--linie);color:var(--grau)}
+.fenster .leiste i{background:#3A557D}
+.ueber p{color:#C3D0E3}
+.sprachen li{border-color:var(--linie)}
+.faq summary::after{border-color:var(--link)}
+.kontakt{background:var(--blau-dunkel)}
+form{background:var(--karte);color:var(--tinte);border:1px solid var(--linie)}
+input,select,textarea{background:#0B1F3B;color:var(--tinte);border-color:rgba(242,244,247,.22)}
+input::placeholder,textarea::placeholder{color:#7F92AE}
+form .klein a{color:var(--link)}
+form .ok{color:#5FD39A}
+form .fehler{color:#FF8A80}
+.hinweis{color:var(--grau)}
+footer{background:var(--blau-dunkel)}
+
 /* Handy & Tablet */
 @media (max-width:980px){
   .hero .wrap,.kontakt .wrap{grid-template-columns:1fr}
@@ -247,7 +288,7 @@ footer a{color:#fff;margin-left:20px}
 
 <header class="kopf">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="MANETIQ, zum Seitenanfang"><img src="img/logo-m.png" alt="" width="207" height="110"><span>MANETIQ</span></a>
+    <a class="logo" href="#top" aria-label="MANETIQ, zum Seitenanfang"><img src="img/logo-m-hell.png" alt="" width="193" height="106"><span>MANETIQ</span></a>
     <nav class="nav" aria-label="Hauptmenü">
       <a href="#leistungen">Leistungen</a>
       <a href="#pakete">Preise</a>
@@ -264,8 +305,8 @@ footer a{color:#fff;margin-left:20px}
 <section class="hero" aria-labelledby="titel">
   <div class="wrap">
     <div>
-      <h1 id="titel">Damit man Ihr Geschäft im Grätzl findet.</h1>
-      <p class="lead">Webseite, Google-Profil und Social Media für kleine Geschäfte in Wien. Ein Ansprechpartner, fixe Preise, keine Agentur-Sprache.</p>
+      <h1 id="titel">Lösungen für Ihr Geschäft. Wo immer Sie sind.</h1>
+      <p class="lead">Webseite, Google-Profil, Social Media und IT für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, kein Fachchinesisch.</p>
       <div class="knoepfe">
         <a class="btn btn-rot" href="#kontakt">Gratis-Check anfordern</a>
         <a class="btn btn-linie" href="#pakete">Preise ansehen</a>
@@ -273,7 +314,7 @@ footer a{color:#fff;margin-left:20px}
       <ul class="fakten">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>In 2 Wochen online</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Monatlich kündbar nach 3 Monaten</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Persönlich vor Ort</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Vor Ort oder online</li>
       </ul>
     </div>
 
@@ -314,7 +355,7 @@ footer a{color:#fff;margin-left:20px}
   <div class="wrap">
     <div class="kopfzeile">
       <h2 id="l-titel">Drei Dinge, die Kunden in Ihr Geschäft bringen</h2>
-      <p>Die meisten Leute suchen am Handy, bevor sie losgehen. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz zwei Straßen weiter.</p>
+      <p>Die meisten Kunden suchen zuerst online. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz.</p>
     </div>
     <div class="leistungen">
       <div class="leistung">
@@ -437,8 +478,8 @@ footer a{color:#fff;margin-left:20px}
   <div class="wrap ueber">
     <div>
       <h2 id="u-titel">Ein Ansprechpartner, der den Handel kennt</h2>
-      <p>MANETIQ kommt aus der IT im Wiener Lebensmittelhandel. Wir wissen, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb übernehmen wir die Technik, und Sie kümmern sich um Ihre Kunden.</p>
-      <p>Sie haben immer denselben Ansprechpartner, kein Callcenter. Und wenn es schneller geht, kommen wir einfach vorbei.</p>
+      <p>MANETIQ kommt aus der IT im Handel. Wir wissen, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb übernehmen wir die Technik, und Sie kümmern sich um Ihre Kunden.</p>
+      <p>Sie haben immer denselben Ansprechpartner, kein Callcenter. Wir betreuen Sie online, egal wo Ihr Geschäft ist, und in der Nähe auch gerne vor Ort.</p>
       <ul class="sprachen" aria-label="Beratung auf">
         <li>Deutsch</li><li>Română</li><li>Español</li>
       </ul>
@@ -491,7 +532,7 @@ footer a{color:#fff;margin-left:20px}
 
 <footer>
   <div class="wrap">
-    <div><img class="fuss-logo" src="img/logo-voll.png" alt="MANETIQ – IT Services &amp; Solutions" width="1220" height="225"><br><span>© <span id="jahr"></span> MANETIQ, Wien</span></div>
+    <div><img class="fuss-logo" src="img/logo-voll.png" alt="MANETIQ – IT Services &amp; Solutions" width="1220" height="225"><br><span>© <span id="jahr"></span> MANETIQ</span></div>
     <span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
