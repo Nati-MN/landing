@@ -3,26 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MANETIQ – Webseite, Google-Profil und Social Media für Geschäfte</title>
+<title>MANETIQ – Webseite, Google-Profil und Social Media für Geschäfte in Wien</title>
 <meta name="description" content="Webseite, Google-Unternehmensprofil und Social Media für kleine Geschäfte in Wien. Ein Ansprechpartner, fixe Monatspreise, Gratis-Check.">
 <meta property="og:title" content="MANETIQ – damit man Ihr Geschäft im Grätzl findet">
 <meta property="og:description" content="Webseite, Google-Profil und Social Media für Geschäfte in Wien.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
-   ANPASSEN: Farben hier, Kontaktdaten ganz unten im <script>
+   ANPASSEN: Farben hier, Formular-Key ganz unten im Skript
    ========================================================= */
 :root{
-  --blau:#1D3C78;      /* Wiener Straßenschild-Blau: Hauptfarbe */
-  --blau-dunkel:#132A57;
-  --rot:#D7262E;       /* Akzent, nur für Wichtiges */
-  --tinte:#17202E;     /* Text */
-  --grau:#5A6678;      /* leiser Text */
-  --linie:#D9DEE6;
-  --flaeche:#EEF1F5;   /* helle Fläche */
+  /* MANETIQ Farbpalette */
+  --blau:#0B1F3B;      /* Dunkelblau: seriös, vertrauensvoll */
+  --blau-dunkel:#021534; /* Hintergrund wie im Logo */
+  --rot:#007BFF;       /* Tech-Blau: Knöpfe und Akzente */
+  --rot-hover:#0066D6;
+  --cyan:#00D4FF;      /* Cyan: nur kleine Highlights */
+  --tinte:#0B1F3B;     /* Text */
+  --grau:#56627A;      /* leiser Text */
+  --linie:#DDE2EA;
+  --flaeche:#F2F4F7;   /* Hellgrau: neutral, professionell */
   --weiss:#FFFFFF;
   --gruen:#1E7F4F;
   --r:14px;
@@ -31,8 +36,8 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Archivo,system-ui,sans-serif;font-stretch:100%;color:var(--tinte);background:var(--weiss);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:var(--blau)}
-:focus-visible{outline:3px solid var(--rot);outline-offset:3px;border-radius:6px}
+a{color:var(--rot)}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-stretch:112%;line-height:1.1;margin:0;letter-spacing:-.01em}
 h2{font-size:clamp(30px,4vw,44px);font-weight:780;max-width:22ch}
@@ -43,16 +48,17 @@ p{margin:0}
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:650;font-size:17px;text-decoration:none;border-radius:999px;padding:14px 24px;border:2px solid transparent;cursor:pointer}
 .btn-rot{background:var(--rot);color:#fff}
-.btn-rot:hover{background:#B81E25}
-.btn-linie{border-color:var(--blau);color:var(--blau);background:transparent}
+.btn-rot:hover{background:var(--rot-hover)}
+.btn-linie{border-color:var(--rot);color:var(--rot);background:transparent}
 .btn-linie:hover{background:var(--flaeche)}
 .btn svg{width:20px;height:20px;flex:none}
 
-/* Kopfzeile: Straßenschild */
+/* Kopfzeile mit Logo */
 .kopf{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
 .kopf .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.schild{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;background:var(--blau);border:3px solid var(--blau);box-shadow:inset 0 0 0 2px #fff;border-radius:6px;padding:5px 14px 6px;font-weight:760;font-stretch:118%;font-size:17px;letter-spacing:.08em}
-.schild small{font-weight:500;font-stretch:100%;font-size:13px;opacity:.85}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--blau)}
+.logo img{height:30px;width:auto}
+.logo span{font-weight:700;font-stretch:125%;font-size:21px;letter-spacing:.07em;line-height:1}
 .nav{display:flex;gap:26px;align-items:center}
 .nav a{text-decoration:none;color:var(--tinte);font-size:16px}
 .nav a:hover{color:var(--blau)}
@@ -66,7 +72,7 @@ p{margin:0}
 .hero .knoepfe{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero .fakten{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;padding:0;list-style:none;font-size:16px;color:var(--grau)}
 .hero .fakten li{display:flex;gap:8px;align-items:center}
-.hero .fakten svg{width:18px;height:18px;color:var(--gruen)}
+.hero .fakten svg{width:18px;height:18px;color:var(--rot)}
 
 /* Handy mit Suchergebnis – das eine auffällige Element */
 .buehne{position:relative;display:flex;justify-content:center}
@@ -88,16 +94,16 @@ p{margin:0}
 .eintrag{border:1px solid var(--linie);border-radius:12px;padding:11px 12px;font-size:13.5px;line-height:1.35}
 .eintrag b{font-size:15px;display:block}
 .eintrag .zeile{color:var(--grau)}
-.eintrag.ihr{border:2px solid var(--rot);background:#FFF7F7}
+.eintrag.ihr{border:2px solid var(--rot);background:#EEF6FF;box-shadow:0 0 0 4px rgba(0,212,255,.18)}
 .sterne{color:#E59B00;letter-spacing:1px}
 .offen{color:var(--gruen);font-weight:600}
 .fehlt{color:#B3261E}
 .aktionen{display:flex;gap:6px;margin-top:9px}
-.aktionen span{flex:1;text-align:center;border:1px solid #C9D3E6;color:var(--blau);border-radius:999px;padding:4px 0;font-weight:600;font-size:12.5px}
-.aktionen span:first-child{background:var(--blau);color:#fff;border-color:var(--blau)}
+.aktionen span{flex:1;text-align:center;border:1px solid #C9D3E6;color:var(--rot);border-radius:999px;padding:4px 0;font-weight:600;font-size:12.5px}
+.aktionen span:first-child{background:var(--rot);color:#fff;border-color:var(--rot)}
 .eintrag.blass{opacity:.62}
-.zettel{position:absolute;right:-6px;top:150px;background:var(--tinte);color:#fff;font-size:14px;line-height:1.35;padding:10px 14px;border-radius:12px;max-width:170px;transform:rotate(3deg)}
-.zettel::before{content:"";position:absolute;left:-7px;top:22px;border:7px solid transparent;border-right-color:var(--tinte);border-left:0}
+.zettel{position:absolute;right:-6px;top:150px;background:var(--blau);color:#fff;font-size:14px;line-height:1.35;padding:10px 14px;border-radius:12px;max-width:170px;transform:rotate(3deg)}
+.zettel::before{content:"";position:absolute;left:-7px;top:22px;border:7px solid transparent;border-right-color:var(--blau);border-left:0}
 
 /* Ladeanimation: nur einmal, nur hier */
 @media (prefers-reduced-motion:no-preference){
@@ -120,31 +126,31 @@ section{padding:96px 0}
 .leistungen{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--tinte)}
 .leistung{padding:28px 28px 8px 0}
 .leistung+.leistung{padding-left:28px;border-left:1px solid var(--linie)}
-.leistung svg{width:34px;height:34px;color:var(--blau);margin-bottom:16px}
+.leistung svg{width:34px;height:34px;color:var(--rot);margin-bottom:16px}
 .leistung p{margin-top:10px;color:#3A4558}
 .leistung ul{margin:14px 0 0;padding-left:18px;color:#3A4558;font-size:16.5px}
 
 /* Pakete */
 .pakete{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 .paket{background:#fff;border:1px solid var(--linie);border-radius:var(--r);padding:30px;display:flex;flex-direction:column}
-.paket.empf{border:2px solid var(--blau);position:relative}
-.paket .marke{position:absolute;top:-14px;left:28px;background:var(--blau);color:#fff;font-size:14px;font-weight:600;border-radius:999px;padding:3px 12px}
+.paket.empf{border:2px solid var(--rot);position:relative}
+.paket .marke{position:absolute;top:-14px;left:28px;background:var(--rot);color:#fff;font-size:14px;font-weight:600;border-radius:999px;padding:3px 12px}
 .paket .art{color:var(--grau);font-size:15.5px;margin-top:4px}
 .preis{margin:22px 0 4px;font-stretch:112%;font-weight:800;font-size:40px;line-height:1}
 .preis small{font-size:16px;font-weight:500;font-stretch:100%;color:var(--grau)}
 .paket ul{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:10px;font-size:16.5px}
 .paket li{display:flex;gap:10px;align-items:flex-start}
-.paket li svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--gruen)}
+.paket li svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--rot)}
 .paket .btn{margin-top:auto;justify-content:center}
 .hinweis{margin-top:22px;font-size:15px;color:var(--grau)}
 
 /* Ablauf: echte Reihenfolge, daher nummeriert */
 .ablauf{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
 .ablauf li{counter-increment:s;position:relative;padding-top:64px}
-.ablauf li::before{content:counter(s);position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--blau);color:#fff;font-weight:750;font-size:20px;display:grid;place-items:center}
+.ablauf li::before{content:counter(s);position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--rot);color:#fff;font-weight:750;font-size:20px;display:grid;place-items:center}
 .ablauf li:not(:last-child)::after{content:"";position:absolute;top:23px;left:58px;right:-16px;height:2px;background:var(--linie)}
 .ablauf p{margin-top:8px;color:#3A4558;font-size:16.5px}
-.ablauf .dauer{display:inline-block;margin-top:10px;font-size:14.5px;color:var(--blau);font-weight:600}
+.ablauf .dauer{display:inline-block;margin-top:10px;font-size:14.5px;color:var(--rot);font-weight:600}
 
 /* Beispiele: kleine Browserfenster */
 .beispiele{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -172,7 +178,7 @@ section{padding:96px 0}
 .fenster figcaption span{color:var(--grau)}
 
 /* Über mich */
-.ueber{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
+.ueber{display:block}
 .foto{aspect-ratio:4/5;border-radius:var(--r);background:var(--flaeche);border:2px dashed #B8C2D2;display:grid;place-items:center;text-align:center;color:var(--grau);font-size:15px;padding:20px}
 .ueber p{margin-top:18px;max-width:58ch;color:#2F3A4C}
 .sprachen{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;padding:0;list-style:none}
@@ -183,15 +189,15 @@ section{padding:96px 0}
 .faq details{border-bottom:1px solid var(--linie)}
 .faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-weight:650;font-size:19px;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:8px;top:30px;width:11px;height:11px;border-right:2.5px solid var(--blau);border-bottom:2.5px solid var(--blau);transform:rotate(45deg);transition:transform .2s}
+.faq summary::after{content:"";position:absolute;right:8px;top:30px;width:11px;height:11px;border-right:2.5px solid var(--rot);border-bottom:2.5px solid var(--rot);transform:rotate(45deg);transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(225deg);top:35px}
 .faq details p{padding:0 0 22px;color:#3A4558;max-width:64ch}
 
 /* Kontakt */
-.kontakt{background:var(--blau);color:#fff}
+.kontakt{background:var(--blau-dunkel);color:#fff;border-top:4px solid var(--cyan)}
 .kontakt .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .kontakt h2{color:#fff}
-.kontakt .lead{margin-top:18px;color:#D4DCEC;max-width:40ch}
+.kontakt .lead{margin-top:18px;color:#C9D6EA;max-width:40ch}
 .wege{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
 .wege a{color:#fff;text-decoration:none;display:flex;gap:12px;align-items:center;font-size:18px}
 .wege a:hover{text-decoration:underline}
@@ -201,13 +207,19 @@ form h3{font-size:22px}
 label{display:grid;gap:6px;font-weight:600;font-size:15.5px}
 input,select,textarea{font:inherit;font-weight:400;font-size:16.5px;border:1px solid #BFC8D6;border-radius:10px;padding:11px 13px;color:var(--tinte);background:#fff;width:100%}
 textarea{min-height:86px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--blau);outline-offset:1px;border-color:var(--blau)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--rot);outline-offset:1px;border-color:var(--rot)}
 form .btn{justify-content:center;width:100%}
 form .klein{font-size:14px;color:var(--grau)}
+form .klein a{color:var(--blau)}
+form .ok{color:var(--gruen);font-weight:600}
+form .fehler{color:#B3261E;font-weight:600}
+.falle{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.kontakt .lead+.lead{margin-top:12px}
 
 /* Fußzeile */
-footer{background:var(--blau-dunkel);color:#B9C4DA;font-size:15px;padding:28px 0}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer{background:var(--blau-dunkel);color:#A9B8D2;font-size:15px;padding:36px 0;border-top:1px solid rgba(255,255,255,.08)}
+footer .fuss-logo{height:52px;width:auto;margin-bottom:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
 footer a{color:#fff;margin-left:20px}
 
 /* Handy & Tablet */
@@ -218,7 +230,6 @@ footer a{color:#fff;margin-left:20px}
   .ablauf{grid-template-columns:1fr 1fr;row-gap:40px}
   .ablauf li::after{display:none}
   .ueber{grid-template-columns:1fr}
-  .foto{max-width:260px}
 }
 @media (max-width:760px){
   body{font-size:17px}
@@ -229,7 +240,6 @@ footer a{color:#fff;margin-left:20px}
   .leistung,.leistung+.leistung{padding:26px 0;border-left:0;border-bottom:1px solid var(--linie)}
   .ablauf{grid-template-columns:1fr}
   .zettel{display:none}
-  .schild small{display:none}
 }
 </style>
 </head>
@@ -237,7 +247,7 @@ footer a{color:#fff;margin-left:20px}
 
 <header class="kopf">
   <div class="wrap">
-    <a class="schild" href="#top" aria-label="MANETIQ, zum Seitenanfang">MANETIQ <small>Wien</small></a>
+    <a class="logo" href="#top" aria-label="MANETIQ, zum Seitenanfang"><img src="img/logo-m.png" alt="" width="207" height="110"><span>MANETIQ</span></a>
     <nav class="nav" aria-label="Hauptmenü">
       <a href="#leistungen">Leistungen</a>
       <a href="#pakete">Preise</a>
@@ -304,7 +314,7 @@ footer a{color:#fff;margin-left:20px}
   <div class="wrap">
     <div class="kopfzeile">
       <h2 id="l-titel">Drei Dinge, die Kunden in Ihr Geschäft bringen</h2>
-      <p>Die meisten Leute suchen am Handy, bevor sie losgehen. Ich sorge dafür, dass sie dabei Sie finden und nicht die Konkurrenz zwei Straßen weiter.</p>
+      <p>Die meisten Leute suchen am Handy, bevor sie losgehen. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz zwei Straßen weiter.</p>
     </div>
     <div class="leistungen">
       <div class="leistung">
@@ -334,7 +344,7 @@ footer a{color:#fff;margin-left:20px}
   <div class="wrap">
     <div class="kopfzeile">
       <h2 id="p-titel">Fixe Preise, ohne Überraschungen</h2>
-      <p>Sie starten mit der Webseite und entscheiden dann, wie viel ich jeden Monat für Sie übernehme.</p>
+      <p>Sie starten mit der Webseite und entscheiden dann, wie viel wir jeden Monat für Sie übernehmen.</p>
     </div>
     <div class="pakete">
       <article class="paket">
@@ -384,12 +394,12 @@ footer a{color:#fff;margin-left:20px}
   <div class="wrap">
     <div class="kopfzeile">
       <h2 id="a-titel">So läuft es ab</h2>
-      <p>Sie müssen nichts Technisches können. Ich brauche nur ein paar Fotos und Ihre Infos.</p>
+      <p>Sie müssen nichts Technisches können. Wir brauchen nur ein paar Fotos und Ihre Infos.</p>
     </div>
     <ol class="ablauf">
-      <li><h3>Gratis-Check</h3><p>Ich schaue mir Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeige Ihnen 3 konkrete Verbesserungen.</p><span class="dauer">20 Minuten, kostenlos</span></li>
+      <li><h3>Gratis-Check</h3><p>Wir schauen uns Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeigen Ihnen 3 konkrete Verbesserungen.</p><span class="dauer">20 Minuten, kostenlos</span></li>
       <li><h3>Angebot</h3><p>Sie bekommen ein fixes Angebot. Kein Kleingedrucktes, keine Stundenzettel.</p><span class="dauer">Innerhalb von 2 Tagen</span></li>
-      <li><h3>Umsetzung</h3><p>Ich baue die Webseite, richte das Google-Profil ein und mache Fotos, wenn nötig. Sie geben alles frei.</p><span class="dauer">Ca. 2 Wochen</span></li>
+      <li><h3>Umsetzung</h3><p>Wir bauen die Webseite, richten das Google-Profil ein und machen Fotos, wenn nötig. Sie geben alles frei.</p><span class="dauer">Ca. 2 Wochen</span></li>
       <li><h3>Betreuung</h3><p>Jeden Monat neue Beiträge, aktuelle Angebote und ein kurzer Bericht, was es gebracht hat.</p><span class="dauer">Laufend</span></li>
     </ol>
   </div>
@@ -422,16 +432,14 @@ footer a{color:#fff;margin-left:20px}
   </div>
 </section>
 
-<!-- ÜBER MICH -->
+<!-- WARUM MANETIQ -->
 <section class="flaeche" aria-labelledby="u-titel">
   <div class="wrap ueber">
-    <!-- FOTO: ersetze das div durch <img class="foto" src="foto.jpg" alt="[Dein Name]"> -->
-    <div class="foto">Hier kommt Ihr Foto hin<br>(Hochformat, freundlich, natürliches Licht)</div>
     <div>
-      <h2 id="u-titel">Ich bin [Vorname], Ihr Ansprechpartner</h2>
-      <p>Ich arbeite seit Jahren in der IT im Wiener Lebensmittelhandel. Ich weiß, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb mache ich die Technik, und Sie kümmern sich um Ihre Kunden.</p>
-      <p>Sie erreichen immer mich persönlich, nicht ein Callcenter. Und wenn es schneller geht, komme ich einfach vorbei.</p>
-      <ul class="sprachen" aria-label="Sprachen">
+      <h2 id="u-titel">Ein Ansprechpartner, der den Handel kennt</h2>
+      <p>MANETIQ kommt aus der IT im Wiener Lebensmittelhandel. Wir wissen, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb übernehmen wir die Technik, und Sie kümmern sich um Ihre Kunden.</p>
+      <p>Sie haben immer denselben Ansprechpartner, kein Callcenter. Und wenn es schneller geht, kommen wir einfach vorbei.</p>
+      <ul class="sprachen" aria-label="Beratung auf">
         <li>Deutsch</li><li>Română</li><li>Español</li>
       </ul>
     </div>
@@ -444,10 +452,10 @@ footer a{color:#fff;margin-left:20px}
     <div class="kopfzeile"><h2 id="f-titel">Häufige Fragen</h2></div>
     <div class="faq">
       <details><summary>Gehört die Webseite mir?</summary><p>Ja. Domain, Webseite, Google-Profil und Werbekonto laufen auf Ihren Namen. Wenn Sie aufhören, nehmen Sie alles mit.</p></details>
-      <details><summary>Muss ich selbst etwas machen?</summary><p>Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per WhatsApp in einer Minute.</p></details>
+      <details><summary>Muss ich selbst etwas machen?</summary><p>Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per E-Mail in einer Minute.</p></details>
       <details><summary>Wie lange bin ich gebunden?</summary><p>Monatspakete laufen mindestens 3 Monate, danach sind sie monatlich kündbar. Das Start-Paket zahlen Sie nur einmal.</p></details>
-      <details><summary>Wie viel Werbebudget brauche ich?</summary><p>Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, ich bekomme davon nichts.</p></details>
-      <details><summary>Ich habe schon eine Webseite. Lohnt sich das trotzdem?</summary><p>Oft ja. Beim Gratis-Check sehe ich, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.</p></details>
+      <details><summary>Wie viel Werbebudget brauche ich?</summary><p>Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, wir bekommen davon nichts.</p></details>
+      <details><summary>Ich habe schon eine Webseite. Lohnt sich das trotzdem?</summary><p>Oft ja. Beim Gratis-Check sehen wir, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.</p></details>
     </div>
   </div>
 </section>
@@ -457,17 +465,14 @@ footer a{color:#fff;margin-left:20px}
   <div class="wrap">
     <div>
       <h2 id="k-titel">Gratis-Check für Ihr Geschäft</h2>
-      <p class="lead">Ich schaue mir Ihren Online-Auftritt an und schicke Ihnen 3 konkrete Verbesserungen. Kostenlos und ohne Verpflichtung.</p>
-      <ul class="wege">
-        <li><a class="js-whatsapp" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>WhatsApp schreiben</a></li>
-        <li><a class="js-telefon" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="js-telefon-text">Telefon</span></a></li>
-        <li><a class="js-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="js-mail-text">E-Mail</span></a></li>
-      </ul>
+      <p class="lead">Wir schauen uns Ihren Online-Auftritt an und schicken Ihnen 3 konkrete Verbesserungen. Kostenlos und ohne Verpflichtung.</p>
+      <p class="lead">Sie bekommen die Antwort innerhalb von 2 Werktagen per E-Mail.</p>
     </div>
 
     <form id="check" novalidate>
       <h3>Gratis-Check anfordern</h3>
       <label>Name des Geschäfts<input name="geschaeft" required autocomplete="organization"></label>
+      <label>Ihre E-Mail-Adresse<input name="email" type="email" required autocomplete="email"></label>
       <label>Branche
         <select name="branche">
           <option>Restaurant oder Café</option><option>Friseur oder Kosmetik</option><option>Lebensmittelgeschäft</option><option>Handwerk</option><option>Anderes</option>
@@ -475,8 +480,9 @@ footer a{color:#fff;margin-left:20px}
       </label>
       <label>Bezirk oder Adresse<input name="ort" required autocomplete="street-address"></label>
       <label>Was soll besser werden? (optional)<textarea name="wunsch"></textarea></label>
-      <button class="btn btn-rot" type="submit">Per WhatsApp senden</button>
-      <p class="klein" id="formhinweis" role="status">Ihre Angaben gehen direkt als WhatsApp-Nachricht an mich. Es wird nichts auf dieser Seite gespeichert.</p>
+      <input type="checkbox" name="botcheck" class="falle" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-rot" type="submit">Anfrage senden</button>
+      <p class="klein" id="formhinweis" role="status">Ihre Angaben werden nur verwendet, um Ihre Anfrage zu beantworten. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
     </form>
   </div>
 </section>
@@ -485,42 +491,60 @@ footer a{color:#fff;margin-left:20px}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="jahr"></span> MANETIQ, Wien</span>
+    <div><img class="fuss-logo" src="img/logo-voll.png" alt="MANETIQ – IT Services &amp; Solutions" width="1220" height="225"><br><span>© <span id="jahr"></span> MANETIQ, Wien</span></div>
     <span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 
 <script>
 /* =========================================================
-   ANPASSEN: deine echten Kontaktdaten
-   WhatsApp-Nummer ohne +, ohne Leerzeichen, mit 43 vorne
+   ANPASSEN: deinen Access Key von web3forms.com hier einfügen.
+   Die Anfragen kommen dann an die E-Mail, mit der du den Key
+   erstellt hast. Der Key darf öffentlich im Code stehen.
    ========================================================= */
-const KONTAKT = {
-  whatsapp: "436600000000",
-  telefon:  "+43 660 000 0000",
-  email:    "hallo@manetiq.at"
-};
+const WEB3FORMS_KEY = "HIER_DEINEN_ACCESS_KEY_EINFUEGEN";
 
-const wa = text => `https://wa.me/${KONTAKT.whatsapp}?text=${encodeURIComponent(text)}`;
-document.querySelectorAll(".js-whatsapp").forEach(a => a.href = wa("Hallo, ich interessiere mich für einen Gratis-Check."));
-document.querySelectorAll(".js-telefon").forEach(a => a.href = "tel:" + KONTAKT.telefon.replace(/\s/g, ""));
-document.querySelectorAll(".js-telefon-text").forEach(s => s.textContent = KONTAKT.telefon);
-document.querySelectorAll(".js-mail").forEach(a => a.href = "mailto:" + KONTAKT.email + "?subject=Gratis-Check");
-document.querySelectorAll(".js-mail-text").forEach(s => s.textContent = KONTAKT.email);
 document.getElementById("jahr").textContent = new Date().getFullYear();
 
-document.getElementById("check").addEventListener("submit", e => {
+const form = document.getElementById("check");
+const hinweis = document.getElementById("formhinweis");
+const knopf = form.querySelector("button");
+const zeige = (text, art) => { hinweis.textContent = text; hinweis.className = "klein " + (art || ""); };
+
+form.addEventListener("submit", async e => {
   e.preventDefault();
-  const f = e.target, hinweis = document.getElementById("formhinweis");
-  const g = f.geschaeft.value.trim(), o = f.ort.value.trim();
-  if (!g || !o) {
-    hinweis.textContent = "Bitte Name des Geschäfts und Bezirk oder Adresse ausfüllen.";
-    (g ? f.ort : f.geschaeft).focus();
-    return;
+  const g = form.geschaeft.value.trim(), m = form.email.value.trim(), o = form.ort.value.trim();
+  if (!g) { zeige("Bitte den Namen des Geschäfts eintragen.", "fehler"); form.geschaeft.focus(); return; }
+  if (!m || !form.email.checkValidity()) { zeige("Bitte eine gültige E-Mail-Adresse eintragen, damit wir antworten können.", "fehler"); form.email.focus(); return; }
+  if (!o) { zeige("Bitte Bezirk oder Adresse eintragen.", "fehler"); form.ort.focus(); return; }
+  if (form.botcheck.checked) return;
+
+  knopf.disabled = true; knopf.textContent = "Wird gesendet …";
+  try {
+    const antwort = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: "Neue Anfrage Gratis-Check: " + g,
+        from_name: "MANETIQ Webseite",
+        replyto: m,
+        Geschaeft: g,
+        "E-Mail": m,
+        Branche: form.branche.value,
+        Ort: o,
+        Wunsch: form.wunsch.value.trim() || "–"
+      })
+    });
+    const daten = await antwort.json();
+    if (!antwort.ok || !daten.success) throw new Error(daten.message || "Fehler");
+    form.reset();
+    zeige("Danke! Ihre Anfrage ist angekommen. Sie hören innerhalb von 2 Werktagen von uns.", "ok");
+    knopf.textContent = "Gesendet";
+  } catch (err) {
+    zeige("Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es in ein paar Minuten noch einmal.", "fehler");
+    knopf.disabled = false; knopf.textContent = "Anfrage senden";
   }
-  const text = `Hallo, ich möchte einen Gratis-Check.\nGeschäft: ${g}\nBranche: ${f.branche.value}\nOrt: ${o}` + (f.wunsch.value.trim() ? `\nWunsch: ${f.wunsch.value.trim()}` : "");
-  window.open(wa(text), "_blank", "noopener");
-  hinweis.textContent = "WhatsApp wurde geöffnet. Bitte dort noch auf Senden tippen.";
 });
 </script>
 </body>
