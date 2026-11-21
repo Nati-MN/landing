@@ -141,7 +141,7 @@ section{padding:96px 0}
 .paket .marke{position:absolute;top:-14px;left:28px;background:var(--rot);color:#fff;font-size:14px;font-weight:600;border-radius:999px;padding:3px 12px}
 .paket .art{color:var(--grau);font-size:15.5px;margin-top:4px}
 .preis{margin:22px 0 4px;font-stretch:112%;font-weight:800;font-size:40px;line-height:1}
-.preis small{font-size:16px;font-weight:500;font-stretch:100%;color:var(--grau)}
+.preis small{font-size:16px;font-weight:500;font-stretch:100%;color:var(--grau);display:block;margin-top:8px}
 .paket ul{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:10px;font-size:16.5px}
 .paket li{display:flex;gap:10px;align-items:flex-start}
 .paket li svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--rot)}
@@ -282,19 +282,48 @@ footer{background:var(--blau-dunkel)}
   .ablauf{grid-template-columns:1fr}
   .zettel{display:none}
 }
+
+
+/* IT-Service */
+.it-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.it-karte{position:relative;background:var(--karte);border:1px solid var(--linie);border-radius:var(--r);padding:26px 22px 24px}
+.it-karte svg{width:30px;height:30px;color:var(--cyan);margin-bottom:14px}
+.it-karte h3{font-size:18.5px;line-height:1.25}
+.it-karte p{margin-top:10px;color:#C3D0E3;font-size:16px;line-height:1.55}
+.it-karte.witzig{border:1.5px dashed var(--cyan);background:linear-gradient(160deg,rgba(0,212,255,.10),transparent 60%),var(--karte)}
+.it-karte.partner{background:transparent}
+.it-tag{position:absolute;top:18px;right:16px;font-size:12.5px;font-weight:650;border-radius:999px;padding:3px 10px;background:rgba(0,212,255,.14);color:var(--cyan)}
+.it-karte.partner .it-tag{background:rgba(242,244,247,.08);color:var(--grau)}
+.it-cta{margin-top:32px}
+@media (max-width:1100px){.it-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.it-grid{grid-template-columns:1fr}}
+
+/* Sprachumschalter */
+.sprache{display:flex;gap:2px;border:1px solid var(--linie);border-radius:999px;padding:3px}
+.sprache button{font:inherit;font-size:13.5px;font-weight:650;color:var(--grau);background:none;border:0;border-radius:999px;padding:6px 10px;cursor:pointer;line-height:1}
+.sprache button:hover{color:var(--tinte)}
+.sprache button[aria-pressed="true"]{background:var(--rot);color:#fff}
+@media (max-width:1100px){.nav{gap:16px}.nav a:not(.btn){font-size:15px}}
+@media (max-width:760px){.nav{gap:12px}}
+@media (max-width:480px){.nav .btn{display:none}.logo span{font-size:18px}.logo img{height:26px}}
 </style>
 </head>
 <body>
 
 <header class="kopf">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="MANETIQ, zum Seitenanfang"><img src="img/logo-m-hell.png" alt="" width="193" height="106"><span>MANETIQ</span></a>
-    <nav class="nav" aria-label="Hauptmenü">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#pakete">Preise</a>
-      <a href="#beispiele">Beispiele</a>
-      <a href="#faq">Fragen</a>
-      <a class="btn btn-rot" href="#kontakt">Gratis-Check</a>
+    <a class="logo" href="#top" aria-label="MANETIQ"><img src="img/logo-m-hell.png" alt="" width="193" height="106"><span>MANETIQ</span></a>
+    <nav class="nav" aria-label="Menü">
+      <a href="#leistungen" data-i18n="nav.leistungen">Leistungen</a>
+      <a href="#it" data-i18n="nav.it">IT-Service</a>
+      <a href="#pakete" data-i18n="nav.preise">Preise</a>
+      <a href="#faq" data-i18n="nav.fragen">Fragen</a>
+      <div class="sprache" role="group" aria-label="Sprache / Language / Limbă">
+        <button type="button" data-lang="de" lang="de" aria-pressed="true" title="Deutsch">DE</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button>
+        <button type="button" data-lang="ro" lang="ro" aria-pressed="false" title="Română">RO</button>
+      </div>
+      <a class="btn btn-rot" href="#kontakt" data-i18n="nav.cta">Gratis-Check</a>
     </nav>
   </div>
 </header>
@@ -305,47 +334,47 @@ footer{background:var(--blau-dunkel)}
 <section class="hero" aria-labelledby="titel">
   <div class="wrap">
     <div>
-      <h1 id="titel">Lösungen für Ihr Geschäft. Wo immer Sie sind.</h1>
-      <p class="lead">Webseite, Google-Profil, Social Media und IT für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, kein Fachchinesisch.</p>
+      <h1 id="titel" data-i18n="hero.h1">Lösungen für Ihr Geschäft. Wo immer Sie sind.</h1>
+      <p class="lead" data-i18n="hero.lead">Webseite, Google-Profil, Social Media und IT für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, kein Fachchinesisch.</p>
       <div class="knoepfe">
-        <a class="btn btn-rot" href="#kontakt">Gratis-Check anfordern</a>
-        <a class="btn btn-linie" href="#pakete">Preise ansehen</a>
+        <a class="btn btn-rot" href="#kontakt" data-i18n="hero.cta1">Gratis-Check anfordern</a>
+        <a class="btn btn-linie" href="#pakete" data-i18n="hero.cta2">Preise ansehen</a>
       </div>
       <ul class="fakten">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>In 2 Wochen online</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Monatlich kündbar nach 3 Monaten</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Vor Ort oder online</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.f1">In 2 Wochen online</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.f2">Monatlich kündbar nach 3 Monaten</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.f3">Vor Ort oder online</span></li>
       </ul>
     </div>
 
-    <div class="buehne" aria-label="Beispiel: Ein Friseur erscheint bei der Google-Suche ganz oben, mit Bewertungen, Öffnungszeiten und Webseite">
+    <div class="buehne" role="img" data-i18n-aria="ph.aria" aria-label="Beispiel: Ein Friseur erscheint bei der Google-Suche ganz oben, mit Bewertungen, Öffnungszeiten und Webseite">
       <div class="handy" aria-hidden="true">
         <div class="karte">
           <div class="str s1"></div><div class="str s2"></div><div class="str s3"></div><div class="str s4"></div>
           <div class="park"></div>
           <div class="pin p1"></div><div class="pin p2"></div><div class="pin p3"></div>
-          <div class="suche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>friseur in der nähe</div>
+          <div class="suche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span data-i18n="ph.suche">friseur in der nähe</span></div>
         </div>
         <div class="treffer">
           <div class="eintrag ihr">
             <b>Salon Mira</b>
-            <div class="zeile"><span class="sterne">★★★★★</span> 4,8 (126) – Friseur, 350 m</div>
-            <div class="offen">Geöffnet bis 19 Uhr</div>
-            <div class="aktionen"><span>Webseite</span><span>Route</span><span>Anrufen</span></div>
+            <div class="zeile"><span class="sterne">★★★★★</span> <span data-i18n="ph.r1">4,8 (126) – Friseur, 350 m</span></div>
+            <div class="offen" data-i18n="ph.offen">Geöffnet bis 19 Uhr</div>
+            <div class="aktionen"><span data-i18n="ph.web">Webseite</span><span data-i18n="ph.route">Route</span><span data-i18n="ph.anruf">Anrufen</span></div>
           </div>
           <div class="eintrag blass">
             <b>Haarstudio K.</b>
-            <div class="zeile"><span class="sterne">★★★★</span> 4,1 (9) – Friseur, 600 m</div>
-            <div class="fehlt">Öffnungszeiten fehlen, keine Webseite</div>
+            <div class="zeile"><span class="sterne">★★★★</span> <span data-i18n="ph.r2">4,1 (9) – Friseur, 600 m</span></div>
+            <div class="fehlt" data-i18n="ph.f2">Öffnungszeiten fehlen, keine Webseite</div>
           </div>
           <div class="eintrag blass">
             <b>Friseur am Eck</b>
-            <div class="zeile"><span class="sterne">★★★★</span> 3,9 (4) – Friseur, 800 m</div>
-            <div class="fehlt">Keine Fotos</div>
+            <div class="zeile"><span class="sterne">★★★★</span> <span data-i18n="ph.r3">3,9 (4) – Friseur, 800 m</span></div>
+            <div class="fehlt" data-i18n="ph.f3">Keine Fotos</div>
           </div>
         </div>
       </div>
-      <div class="zettel" aria-hidden="true">Wer oben steht, bekommt den Anruf.</div>
+      <div class="zettel" aria-hidden="true" data-i18n="ph.zettel">Wer oben steht, bekommt den Anruf.</div>
     </div>
   </div>
 </section>
@@ -354,149 +383,202 @@ footer{background:var(--blau-dunkel)}
 <section id="leistungen" class="flaeche" aria-labelledby="l-titel">
   <div class="wrap">
     <div class="kopfzeile">
-      <h2 id="l-titel">Drei Dinge, die Kunden in Ihr Geschäft bringen</h2>
-      <p>Die meisten Kunden suchen zuerst online. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz.</p>
+      <h2 id="l-titel" data-i18n="l.h2">Drei Dinge, die Kunden in Ihr Geschäft bringen</h2>
+      <p data-i18n="l.p">Die meisten Kunden suchen zuerst online. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz.</p>
     </div>
     <div class="leistungen">
       <div class="leistung">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg>
-        <h3>Webseite</h3>
-        <p>Schnell, gut am Handy, mit allem, was Kunden wissen wollen.</p>
-        <ul><li>Öffnungszeiten, Adresse, Anfahrt</li><li>Speisekarte, Preise oder Angebote</li><li>Anruf und WhatsApp mit einem Tipp</li></ul>
+        <h3 data-i18n="l1.h">Webseite</h3>
+        <p data-i18n="l1.p">Schnell, gut am Handy, mit allem, was Kunden wissen wollen.</p>
+        <ul><li data-i18n="l1.a">Öffnungszeiten, Adresse, Anfahrt</li><li data-i18n="l1.b">Speisekarte, Preise oder Angebote</li><li data-i18n="l1.c">Anruf und WhatsApp mit einem Tipp</li></ul>
       </div>
       <div class="leistung">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-        <h3>Google-Profil</h3>
-        <p>Der Eintrag bei Google Maps, den man bei „in der Nähe“ sieht.</p>
-        <ul><li>Richtige Zeiten, auch an Feiertagen</li><li>Gute Fotos von Geschäft und Ware</li><li>Antworten auf Bewertungen</li></ul>
+        <h3 data-i18n="l2.h">Google-Profil</h3>
+        <p data-i18n="l2.p">Der Eintrag bei Google Maps, den man bei „in der Nähe“ sieht.</p>
+        <ul><li data-i18n="l2.a">Richtige Zeiten, auch an Feiertagen</li><li data-i18n="l2.b">Gute Fotos von Geschäft und Ware</li><li data-i18n="l2.c">Antworten auf Bewertungen</li></ul>
       </div>
       <div class="leistung">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.8" cy="7.2" r=".8" fill="currentColor"/></svg>
-        <h3>Social Media & Werbung</h3>
-        <p>Instagram und Facebook, regelmäßig und mit Plan.</p>
-        <ul><li>Beiträge und kurze Videos jeden Monat</li><li>Werbung nur für Leute in Ihrer Umgebung</li><li>Newsletter für Stammkunden</li></ul>
+        <h3 data-i18n="l3.h">Social Media &amp; Werbung</h3>
+        <p data-i18n="l3.p">Instagram und Facebook, regelmäßig und mit Plan.</p>
+        <ul><li data-i18n="l3.a">Beiträge und kurze Videos jeden Monat</li><li data-i18n="l3.b">Werbung nur für Leute in Ihrer Umgebung</li><li data-i18n="l3.c">Newsletter für Stammkunden</li></ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- IT-SERVICE -->
+<section id="it" aria-labelledby="it-titel">
+  <div class="wrap">
+    <div class="kopfzeile">
+      <h2 id="it-titel" data-i18n="it.h2"></h2>
+      <p data-i18n="it.p"></p>
+    </div>
+    <div class="it-grid">
+      <article class="it-karte">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <h3 data-i18n="it.st.h"></h3>
+        <p data-i18n="it.st.p"></p>
+      </article>
+      <article class="it-karte">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11l4 3V6l3-1v12l-3-1v-4l-4 3H3z"/><circle cx="8" cy="11" r="2"/></svg>
+        <h3 data-i18n="it.kam.h"></h3>
+        <p data-i18n="it.kam.p"></p>
+      </article>
+      <article class="it-karte">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        <h3 data-i18n="it.pc.h"></h3>
+        <p data-i18n="it.pc.p"></p>
+      </article>
+      <article class="it-karte">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M3 21h18M8 8h3M8 12h3M8 16h3"/></svg>
+        <h3 data-i18n="it.buero.h"></h3>
+        <p data-i18n="it.buero.p"></p>
+      </article>
+      <article class="it-karte witzig">
+        <span class="it-tag" data-i18n="it.tag.klassiker"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6M7 17H4a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-3"/><rect x="7" y="14" width="10" height="7"/><path d="M17.5 12h.01"/></svg>
+        <h3 data-i18n="it.drucker.h"></h3>
+        <p data-i18n="it.drucker.p"></p>
+      </article>
+      <article class="it-karte">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6M9 14v4"/><rect x="17" y="9" width="5" height="11" rx="1"/><path d="M19.5 17.5h.01"/></svg>
+        <h3 data-i18n="it.remote.h"></h3>
+        <p data-i18n="it.remote.p"></p>
+      </article>
+      <article class="it-karte partner">
+        <span class="it-tag" data-i18n="it.tag.partner"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.7 10.7l6.6-3.4M8.7 13.3l6.6 3.4"/></svg>
+        <h3 data-i18n="it.odoo.h"></h3>
+        <p data-i18n="it.odoo.p"></p>
+      </article>
+      <article class="it-karte partner">
+        <span class="it-tag" data-i18n="it.tag.partner"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+        <h3 data-i18n="it.umsatz.h"></h3>
+        <p data-i18n="it.umsatz.p"></p>
+      </article>
+    </div>
+    <div class="it-cta"><a class="btn btn-rot" href="#kontakt" data-thema="IT-Support Büro" data-i18n="it.cta"></a></div>
   </div>
 </section>
 
 <!-- PAKETE -->
-<section id="pakete" aria-labelledby="p-titel">
+<section id="pakete" class="flaeche" aria-labelledby="p-titel">
   <div class="wrap">
     <div class="kopfzeile">
-      <h2 id="p-titel">Fixe Preise, ohne Überraschungen</h2>
-      <p>Sie starten mit der Webseite und entscheiden dann, wie viel wir jeden Monat für Sie übernehmen.</p>
+      <h2 id="p-titel" data-i18n="p.h2">Fixe Preise, ohne Überraschungen</h2>
+      <p data-i18n="p.p">Sie starten mit der Webseite und entscheiden dann, wie viel wir jeden Monat für Sie übernehmen.</p>
     </div>
     <div class="pakete">
       <article class="paket">
-        <h3>Start</h3>
-        <p class="art">Einmalig</p>
-        <p class="preis">ab 690 €</p>
+        <h3 data-i18n="k1.name">Start</h3>
+        <p class="art" data-i18n="einmalig">Einmalig</p>
+        <p class="preis" data-i18n="k1.preis">ab 690 €</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Webseite mit 1 bis 5 Seiten</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Google-Profil einrichten</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Facebook und Instagram aufräumen</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Impressum und Datenschutz</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.a">Webseite mit 1 bis 5 Seiten</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.b">Google-Profil einrichten</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.c">Facebook und Instagram aufräumen</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.d">Impressum und Datenschutz</span></li>
         </ul>
-        <a class="btn btn-linie" href="#kontakt">Start anfragen</a>
+        <a class="btn btn-linie" href="#kontakt" data-i18n="k1.btn">Start anfragen</a>
       </article>
       <article class="paket empf">
-        <span class="marke">Am häufigsten gewählt</span>
-        <h3>Sichtbar</h3>
-        <p class="art">Monatlich</p>
-        <p class="preis">ab 199 € <small>pro Monat</small></p>
+        <span class="marke" data-i18n="marke">Am häufigsten gewählt</span>
+        <h3 data-i18n="k2.name">Sichtbar</h3>
+        <p class="art" data-i18n="monatlich">Monatlich</p>
+        <p class="preis"><span data-i18n="k2.preis">ab 199 €</span> <small data-i18n="promonat">pro Monat</small></p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>4 bis 6 Beiträge pro Monat</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Webseite aktuell halten</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Google-Profil pflegen</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Kurzer Bericht jeden Monat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.a">4 bis 6 Beiträge pro Monat</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.b">Webseite aktuell halten</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.c">Google-Profil pflegen</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.d">Kurzer Bericht jeden Monat</span></li>
         </ul>
-        <a class="btn btn-rot" href="#kontakt">Sichtbar anfragen</a>
+        <a class="btn btn-rot" href="#kontakt" data-i18n="k2.btn">Sichtbar anfragen</a>
       </article>
       <article class="paket">
-        <h3>Mehr Kunden</h3>
-        <p class="art">Monatlich</p>
-        <p class="preis">ab 399 € <small>pro Monat</small></p>
+        <h3 data-i18n="k3.name">Mehr Kunden</h3>
+        <p class="art" data-i18n="monatlich">Monatlich</p>
+        <p class="preis"><span data-i18n="k3.preis">ab 399 €</span> <small data-i18n="promonat">pro Monat</small></p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Alles aus „Sichtbar“</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Werbung auf Facebook und Instagram</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Zielgruppen in Ihrer Umgebung</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>1 Newsletter pro Monat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.a">Alles aus „Sichtbar“</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.b">Werbung auf Facebook und Instagram</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.c">Zielgruppen in Ihrer Umgebung</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.d">1 Newsletter pro Monat</span></li>
         </ul>
-        <a class="btn btn-linie" href="#kontakt">Mehr Kunden anfragen</a>
+        <a class="btn btn-linie" href="#kontakt" data-i18n="k3.btn">Mehr Kunden anfragen</a>
       </article>
     </div>
-    <p class="hinweis">Das Werbebudget bei „Mehr Kunden“ zahlen Sie direkt an Meta, damit Sie jeden Euro selbst sehen. Mindestlaufzeit für Monatspakete: 3 Monate.</p>
+    <p class="hinweis" data-i18n="p.note">Das Werbebudget bei „Mehr Kunden“ zahlen Sie direkt an Meta, damit Sie jeden Euro selbst sehen. Mindestlaufzeit für Monatspakete: 3 Monate.</p>
   </div>
 </section>
 
 <!-- ABLAUF -->
-<section class="flaeche" aria-labelledby="a-titel">
+<section aria-labelledby="a-titel">
   <div class="wrap">
     <div class="kopfzeile">
-      <h2 id="a-titel">So läuft es ab</h2>
-      <p>Sie müssen nichts Technisches können. Wir brauchen nur ein paar Fotos und Ihre Infos.</p>
+      <h2 id="a-titel" data-i18n="a.h2">So läuft es ab</h2>
+      <p data-i18n="a.p">Sie müssen nichts Technisches können. Wir brauchen nur ein paar Fotos und Ihre Infos.</p>
     </div>
     <ol class="ablauf">
-      <li><h3>Gratis-Check</h3><p>Wir schauen uns Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeigen Ihnen 3 konkrete Verbesserungen.</p><span class="dauer">20 Minuten, kostenlos</span></li>
-      <li><h3>Angebot</h3><p>Sie bekommen ein fixes Angebot. Kein Kleingedrucktes, keine Stundenzettel.</p><span class="dauer">Innerhalb von 2 Tagen</span></li>
-      <li><h3>Umsetzung</h3><p>Wir bauen die Webseite, richten das Google-Profil ein und machen Fotos, wenn nötig. Sie geben alles frei.</p><span class="dauer">Ca. 2 Wochen</span></li>
-      <li><h3>Betreuung</h3><p>Jeden Monat neue Beiträge, aktuelle Angebote und ein kurzer Bericht, was es gebracht hat.</p><span class="dauer">Laufend</span></li>
+      <li><h3 data-i18n="s1.h">Gratis-Check</h3><p data-i18n="s1.p">Wir schauen uns Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeigen Ihnen 3 konkrete Verbesserungen.</p><span class="dauer" data-i18n="s1.d">20 Minuten, kostenlos</span></li>
+      <li><h3 data-i18n="s2.h">Angebot</h3><p data-i18n="s2.p">Sie bekommen ein fixes Angebot. Kein Kleingedrucktes, keine Stundenzettel.</p><span class="dauer" data-i18n="s2.d">Innerhalb von 2 Tagen</span></li>
+      <li><h3 data-i18n="s3.h">Umsetzung</h3><p data-i18n="s3.p">Wir bauen die Webseite, richten das Google-Profil ein und machen Fotos, wenn nötig. Sie geben alles frei.</p><span class="dauer" data-i18n="s3.d">Ca. 2 Wochen</span></li>
+      <li><h3 data-i18n="s4.h">Betreuung</h3><p data-i18n="s4.p">Jeden Monat neue Beiträge, aktuelle Angebote und ein kurzer Bericht, was es gebracht hat.</p><span class="dauer" data-i18n="s4.d">Laufend</span></li>
     </ol>
   </div>
 </section>
 
 <!-- BEISPIELE -->
-<section id="beispiele" aria-labelledby="b-titel">
+<section id="beispiele" class="flaeche" aria-labelledby="b-titel">
   <div class="wrap">
     <div class="kopfzeile">
-      <h2 id="b-titel">Jedes Geschäft sieht anders aus</h2>
-      <p>Keine Vorlage für alle: Die Webseite passt zu Ihrem Geschäft und zu Ihren Kunden. Drei Beispielentwürfe:</p>
+      <h2 id="b-titel" data-i18n="b.h2">Jedes Geschäft sieht anders aus</h2>
+      <p data-i18n="b.p">Keine Vorlage für alle: Die Webseite passt zu Ihrem Geschäft und zu Ihren Kunden. Drei Beispielentwürfe:</p>
     </div>
     <div class="beispiele">
       <figure class="fenster">
         <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>cafe-gruenentor.at</span></div>
-        <div class="vorschau v1" aria-hidden="true"><div class="t">Café Grünentor</div><div class="u">Frühstück bis 14 Uhr, Mo bis So</div><div class="k">Tisch reservieren</div></div>
-        <figcaption><b>Café</b><span>Speisekarte, Reservierung per WhatsApp, Fotos vom Frühstück</span></figcaption>
+        <div class="vorschau v1" aria-hidden="true"><div class="t">Café Grünentor</div><div class="u" data-i18n="v1.u">Frühstück bis 14 Uhr, Mo bis So</div><div class="k" data-i18n="v1.k">Tisch reservieren</div></div>
+        <figcaption><b data-i18n="c1.h">Café</b><span data-i18n="c1.p">Speisekarte, Reservierung per WhatsApp, Fotos vom Frühstück</span></figcaption>
       </figure>
       <figure class="fenster">
         <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>salon-mira.at</span></div>
-        <div class="vorschau v2" aria-hidden="true"><div class="t">SALON MIRA</div><div class="u">Schnitt, Farbe, Hochsteckfrisuren</div><div class="k">Termin buchen</div></div>
-        <figcaption><b>Friseur</b><span>Online-Termin, Preisliste, Vorher-nachher-Galerie</span></figcaption>
+        <div class="vorschau v2" aria-hidden="true"><div class="t">SALON MIRA</div><div class="u" data-i18n="v2.u">Schnitt, Farbe, Hochsteckfrisuren</div><div class="k" data-i18n="v2.k">Termin buchen</div></div>
+        <figcaption><b data-i18n="c2.h">Friseur</b><span data-i18n="c2.p">Online-Termin, Preisliste, Vorher-nachher-Galerie</span></figcaption>
       </figure>
       <figure class="fenster">
         <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>feinkost-dunav.at</span></div>
-        <div class="vorschau v3" aria-hidden="true"><div class="t">Feinkost Dunav</div><div class="u">Aktionen dieser Woche</div><div class="k">Zum Prospekt</div></div>
-        <figcaption><b>Lebensmittelgeschäft</b><span>Wochenaktionen, Newsletter, mehrsprachig</span></figcaption>
+        <div class="vorschau v3" aria-hidden="true"><div class="t">Feinkost Dunav</div><div class="u" data-i18n="v3.u">Aktionen dieser Woche</div><div class="k" data-i18n="v3.k">Zum Prospekt</div></div>
+        <figcaption><b data-i18n="c3.h">Lebensmittelgeschäft</b><span data-i18n="c3.p">Wochenaktionen, Newsletter, mehrsprachig</span></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
 <!-- WARUM MANETIQ -->
-<section class="flaeche" aria-labelledby="u-titel">
+<section aria-labelledby="u-titel">
   <div class="wrap ueber">
     <div>
-      <h2 id="u-titel">Ein Ansprechpartner, der den Handel kennt</h2>
-      <p>MANETIQ kommt aus der IT im Handel. Wir wissen, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb übernehmen wir die Technik, und Sie kümmern sich um Ihre Kunden.</p>
-      <p>Sie haben immer denselben Ansprechpartner, kein Callcenter. Wir betreuen Sie online, egal wo Ihr Geschäft ist, und in der Nähe auch gerne vor Ort.</p>
-      <ul class="sprachen" aria-label="Beratung auf">
-        <li>Deutsch</li><li>Română</li><li>Español</li>
+      <h2 id="u-titel" data-i18n="u.h2">Ein Ansprechpartner, der den Handel kennt</h2>
+      <p data-i18n="u.p1">MANETIQ kommt aus der IT im Handel. Wir wissen, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb übernehmen wir die Technik, und Sie kümmern sich um Ihre Kunden.</p>
+      <p data-i18n="u.p2">Sie haben immer denselben Ansprechpartner, kein Callcenter. Wir betreuen Sie online, egal wo Ihr Geschäft ist, und in der Nähe auch gerne vor Ort.</p>
+      <ul class="sprachen" data-i18n-aria="u.langs" aria-label="Beratung auf">
+        <li lang="de">Deutsch</li><li lang="en">English</li><li lang="ro">Română</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" aria-labelledby="f-titel">
+<section id="faq" class="flaeche" aria-labelledby="f-titel">
   <div class="wrap">
-    <div class="kopfzeile"><h2 id="f-titel">Häufige Fragen</h2></div>
+    <div class="kopfzeile"><h2 id="f-titel" data-i18n="f.h2">Häufige Fragen</h2></div>
     <div class="faq">
-      <details><summary>Gehört die Webseite mir?</summary><p>Ja. Domain, Webseite, Google-Profil und Werbekonto laufen auf Ihren Namen. Wenn Sie aufhören, nehmen Sie alles mit.</p></details>
-      <details><summary>Muss ich selbst etwas machen?</summary><p>Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per E-Mail in einer Minute.</p></details>
-      <details><summary>Wie lange bin ich gebunden?</summary><p>Monatspakete laufen mindestens 3 Monate, danach sind sie monatlich kündbar. Das Start-Paket zahlen Sie nur einmal.</p></details>
-      <details><summary>Wie viel Werbebudget brauche ich?</summary><p>Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, wir bekommen davon nichts.</p></details>
-      <details><summary>Ich habe schon eine Webseite. Lohnt sich das trotzdem?</summary><p>Oft ja. Beim Gratis-Check sehen wir, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.</p></details>
+      <details><summary data-i18n="q1">Gehört die Webseite mir?</summary><p data-i18n="a1">Ja. Domain, Webseite, Google-Profil und Werbekonto laufen auf Ihren Namen. Wenn Sie aufhören, nehmen Sie alles mit.</p></details>
+      <details><summary data-i18n="q2">Muss ich selbst etwas machen?</summary><p data-i18n="a2">Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per E-Mail in einer Minute.</p></details>
+      <details><summary data-i18n="q3">Wie lange bin ich gebunden?</summary><p data-i18n="a3">Monatspakete laufen mindestens 3 Monate, danach sind sie monatlich kündbar. Das Start-Paket zahlen Sie nur einmal.</p></details>
+      <details><summary data-i18n="q4">Wie viel Werbebudget brauche ich?</summary><p data-i18n="a4">Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, wir bekommen davon nichts.</p></details>
+      <details><summary data-i18n="q5">Ich habe schon eine Webseite. Lohnt sich das trotzdem?</summary><p data-i18n="a5">Oft ja. Beim Gratis-Check sehen wir, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.</p></details>
     </div>
   </div>
 </section>
@@ -505,25 +587,41 @@ footer{background:var(--blau-dunkel)}
 <section id="kontakt" class="kontakt" aria-labelledby="k-titel">
   <div class="wrap">
     <div>
-      <h2 id="k-titel">Gratis-Check für Ihr Geschäft</h2>
-      <p class="lead">Wir schauen uns Ihren Online-Auftritt an und schicken Ihnen 3 konkrete Verbesserungen. Kostenlos und ohne Verpflichtung.</p>
-      <p class="lead">Sie bekommen die Antwort innerhalb von 2 Werktagen per E-Mail.</p>
+      <h2 id="k-titel" data-i18n="kt.h2">Gratis-Check für Ihr Geschäft</h2>
+      <p class="lead" data-i18n="kt.p1">Wir schauen uns Ihren Online-Auftritt an und schicken Ihnen 3 konkrete Verbesserungen. Kostenlos und ohne Verpflichtung.</p>
+      <p class="lead" data-i18n="kt.p2">Sie bekommen die Antwort innerhalb von 2 Werktagen per E-Mail.</p>
     </div>
 
     <form id="check" novalidate>
-      <h3>Gratis-Check anfordern</h3>
-      <label>Name des Geschäfts<input name="geschaeft" required autocomplete="organization"></label>
-      <label>Ihre E-Mail-Adresse<input name="email" type="email" required autocomplete="email"></label>
-      <label>Branche
-        <select name="branche">
-          <option>Restaurant oder Café</option><option>Friseur oder Kosmetik</option><option>Lebensmittelgeschäft</option><option>Handwerk</option><option>Anderes</option>
+      <h3 data-i18n="fm.h3">Gratis-Check anfordern</h3>
+      <label><span data-i18n="fm.thema">Worum geht es?</span>
+        <select name="thema">
+          <option value="Gratis-Check Webseite &amp; Marketing" data-i18n="t1">Gratis-Check Webseite &amp; Marketing</option>
+          <option value="Statistiken" data-i18n="t2">Statistiken</option>
+          <option value="Kameras &amp; NVR" data-i18n="t3">Kameras &amp; NVR</option>
+          <option value="Computer &amp; Drucker" data-i18n="t4">Computer &amp; Drucker</option>
+          <option value="IT-Support Büro" data-i18n="t5">IT-Support Büro</option>
+          <option value="Fernwartung (RustDesk)" data-i18n="t6">Fernwartung (RustDesk)</option>
+          <option value="Größeres Projekt / Partner" data-i18n="t7">Größeres Projekt / Partner</option>
+          <option value="Anderes" data-i18n="t8">Anderes</option>
         </select>
       </label>
-      <label>Bezirk oder Adresse<input name="ort" required autocomplete="street-address"></label>
-      <label>Was soll besser werden? (optional)<textarea name="wunsch"></textarea></label>
+      <label><span data-i18n="fm.geschaeft">Name des Geschäfts</span><input name="geschaeft" required autocomplete="organization"></label>
+      <label><span data-i18n="fm.email">Ihre E-Mail-Adresse</span><input name="email" type="email" required autocomplete="email"></label>
+      <label><span data-i18n="fm.branche">Branche</span>
+        <select name="branche">
+          <option value="Restaurant oder Café" data-i18n="o1">Restaurant oder Café</option>
+          <option value="Friseur oder Kosmetik" data-i18n="o2">Friseur oder Kosmetik</option>
+          <option value="Lebensmittelgeschäft" data-i18n="o3">Lebensmittelgeschäft</option>
+          <option value="Handwerk" data-i18n="o4">Handwerk</option>
+          <option value="Anderes" data-i18n="o5">Anderes</option>
+        </select>
+      </label>
+      <label><span data-i18n="fm.ort">Ort oder Adresse</span><input name="ort" required autocomplete="street-address"></label>
+      <label><span data-i18n="fm.wunsch">Was soll besser werden? (optional)</span><textarea name="wunsch"></textarea></label>
       <input type="checkbox" name="botcheck" class="falle" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn btn-rot" type="submit">Anfrage senden</button>
-      <p class="klein" id="formhinweis" role="status">Ihre Angaben werden nur verwendet, um Ihre Anfrage zu beantworten. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
+      <button class="btn btn-rot" type="submit" data-i18n="fm.btn">Anfrage senden</button>
+      <p class="klein" id="formhinweis" role="status" data-i18n-html="fm.hint">Ihre Angaben werden nur verwendet, um Ihre Anfrage zu beantworten. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
     </form>
   </div>
 </section>
@@ -533,20 +631,344 @@ footer{background:var(--blau-dunkel)}
 <footer>
   <div class="wrap">
     <div><img class="fuss-logo" src="img/logo-voll.png" alt="MANETIQ – IT Services &amp; Solutions" width="1220" height="225"><br><span>© <span id="jahr"></span> MANETIQ</span></div>
-    <span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span>
+    <span><a href="impressum.html" data-i18n="ft.impressum">Impressum</a><a href="datenschutz.html" data-i18n="ft.datenschutz">Datenschutz</a></span>
   </div>
 </footer>
 
 <script>
 /* =========================================================
    ANPASSEN: deinen Access Key von web3forms.com hier einfügen.
-   Die Anfragen kommen dann an die E-Mail, mit der du den Key
-   erstellt hast. Der Key darf öffentlich im Code stehen.
+   Die Anfragen kommen an die E-Mail, mit der du den Key erstellt
+   hast. Der Key darf öffentlich im Code stehen.
    ========================================================= */
 const WEB3FORMS_KEY = "HIER_DEINEN_ACCESS_KEY_EINFUEGEN";
 
+/* ===== Texte in 3 Sprachen ===== */
+const T = {
+de: {
+  "meta.title": "MANETIQ – IT-Lösungen für Ihr Geschäft, wo immer Sie sind",
+  "meta.desc": "Webseite, Google-Profil, Social Media und IT-Lösungen für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, Gratis-Check.",
+  "nav.leistungen": "Leistungen", "nav.preise": "Preise", "nav.beispiele": "Beispiele", "nav.fragen": "Fragen", "nav.cta": "Gratis-Check",
+  "hero.h1": "Lösungen für Ihr Geschäft. Wo immer Sie sind.",
+  "hero.lead": "Webseite, Google-Profil, Social Media und IT für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, kein Fachchinesisch.",
+  "hero.cta1": "Gratis-Check anfordern", "hero.cta2": "Preise ansehen",
+  "hero.f1": "In 2 Wochen online", "hero.f2": "Monatlich kündbar nach 3 Monaten", "hero.f3": "Vor Ort oder online",
+  "ph.aria": "Beispiel: Ein Friseur erscheint bei der Google-Suche ganz oben, mit Bewertungen, Öffnungszeiten und Webseite",
+  "ph.suche": "friseur in der nähe", "ph.r1": "4,8 (126) – Friseur, 350 m", "ph.offen": "Geöffnet bis 19 Uhr",
+  "ph.web": "Webseite", "ph.route": "Route", "ph.anruf": "Anrufen",
+  "ph.r2": "4,1 (9) – Friseur, 600 m", "ph.f2": "Öffnungszeiten fehlen, keine Webseite",
+  "ph.r3": "3,9 (4) – Friseur, 800 m", "ph.f3": "Keine Fotos", "ph.zettel": "Wer oben steht, bekommt den Anruf.",
+  "l.h2": "Drei Dinge, die Kunden in Ihr Geschäft bringen",
+  "l.p": "Die meisten Kunden suchen zuerst online. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz.",
+  "l1.h": "Webseite", "l1.p": "Schnell, gut am Handy, mit allem, was Kunden wissen wollen.",
+  "l1.a": "Öffnungszeiten, Adresse, Anfahrt", "l1.b": "Speisekarte, Preise oder Angebote", "l1.c": "Anruf und WhatsApp mit einem Tipp",
+  "l2.h": "Google-Profil", "l2.p": "Der Eintrag bei Google Maps, den man bei „in der Nähe“ sieht.",
+  "l2.a": "Richtige Zeiten, auch an Feiertagen", "l2.b": "Gute Fotos von Geschäft und Ware", "l2.c": "Antworten auf Bewertungen",
+  "l3.h": "Social Media & Werbung", "l3.p": "Instagram und Facebook, regelmäßig und mit Plan.",
+  "l3.a": "Beiträge und kurze Videos jeden Monat", "l3.b": "Werbung nur für Leute in Ihrer Umgebung", "l3.c": "Newsletter für Stammkunden",
+  "p.h2": "Fixe Preise, ohne Überraschungen",
+  "p.p": "Sie starten mit der Webseite und entscheiden dann, wie viel wir jeden Monat für Sie übernehmen.",
+  "einmalig": "Einmalig", "monatlich": "Monatlich", "promonat": "pro Monat", "marke": "Am häufigsten gewählt",
+  "k1.name": "Start", "k1.preis": "ab 690 €", "k1.a": "Webseite mit 1 bis 5 Seiten", "k1.b": "Google-Profil einrichten", "k1.c": "Facebook und Instagram aufräumen", "k1.d": "Impressum und Datenschutz", "k1.btn": "Start anfragen",
+  "k2.name": "Sichtbar", "k2.preis": "ab 199 €", "k2.a": "4 bis 6 Beiträge pro Monat", "k2.b": "Webseite aktuell halten", "k2.c": "Google-Profil pflegen", "k2.d": "Kurzer Bericht jeden Monat", "k2.btn": "Sichtbar anfragen",
+  "k3.name": "Mehr Kunden", "k3.preis": "ab 399 €", "k3.a": "Alles aus „Sichtbar“", "k3.b": "Werbung auf Facebook und Instagram", "k3.c": "Zielgruppen in Ihrer Umgebung", "k3.d": "1 Newsletter pro Monat", "k3.btn": "Mehr Kunden anfragen",
+  "p.note": "Das Werbebudget bei „Mehr Kunden“ zahlen Sie direkt an Meta, damit Sie jeden Euro selbst sehen. Mindestlaufzeit für Monatspakete: 3 Monate.",
+  "a.h2": "So läuft es ab", "a.p": "Sie müssen nichts Technisches können. Wir brauchen nur ein paar Fotos und Ihre Infos.",
+  "s1.h": "Gratis-Check", "s1.p": "Wir schauen uns Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeigen Ihnen 3 konkrete Verbesserungen.", "s1.d": "20 Minuten, kostenlos",
+  "s2.h": "Angebot", "s2.p": "Sie bekommen ein fixes Angebot. Kein Kleingedrucktes, keine Stundenzettel.", "s2.d": "Innerhalb von 2 Tagen",
+  "s3.h": "Umsetzung", "s3.p": "Wir bauen die Webseite, richten das Google-Profil ein und machen Fotos, wenn nötig. Sie geben alles frei.", "s3.d": "Ca. 2 Wochen",
+  "s4.h": "Betreuung", "s4.p": "Jeden Monat neue Beiträge, aktuelle Angebote und ein kurzer Bericht, was es gebracht hat.", "s4.d": "Laufend",
+  "b.h2": "Jedes Geschäft sieht anders aus", "b.p": "Keine Vorlage für alle: Die Webseite passt zu Ihrem Geschäft und zu Ihren Kunden. Drei Beispielentwürfe:",
+  "v1.u": "Frühstück bis 14 Uhr, Mo bis So", "v1.k": "Tisch reservieren", "v2.u": "Schnitt, Farbe, Hochsteckfrisuren", "v2.k": "Termin buchen", "v3.u": "Aktionen dieser Woche", "v3.k": "Zum Prospekt",
+  "c1.h": "Café", "c1.p": "Speisekarte, Reservierung per WhatsApp, Fotos vom Frühstück",
+  "c2.h": "Friseur", "c2.p": "Online-Termin, Preisliste, Vorher-nachher-Galerie",
+  "c3.h": "Lebensmittelgeschäft", "c3.p": "Wochenaktionen, Newsletter, mehrsprachig",
+  "u.h2": "Ein Ansprechpartner, der den Handel kennt",
+  "u.p1": "MANETIQ kommt aus der IT im Handel. Wir wissen, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb übernehmen wir die Technik, und Sie kümmern sich um Ihre Kunden.",
+  "u.p2": "Sie haben immer denselben Ansprechpartner, kein Callcenter. Wir betreuen Sie online, egal wo Ihr Geschäft ist, und in der Nähe auch gerne vor Ort.",
+  "u.langs": "Beratung auf",
+  "f.h2": "Häufige Fragen",
+  "q1": "Gehört die Webseite mir?", "a1": "Ja. Domain, Webseite, Google-Profil und Werbekonto laufen auf Ihren Namen. Wenn Sie aufhören, nehmen Sie alles mit.",
+  "q2": "Muss ich selbst etwas machen?", "a2": "Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per E-Mail in einer Minute.",
+  "q3": "Wie lange bin ich gebunden?", "a3": "Monatspakete laufen mindestens 3 Monate, danach sind sie monatlich kündbar. Das Start-Paket zahlen Sie nur einmal.",
+  "q4": "Wie viel Werbebudget brauche ich?", "a4": "Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, wir bekommen davon nichts.",
+  "q5": "Ich habe schon eine Webseite. Lohnt sich das trotzdem?", "a5": "Oft ja. Beim Gratis-Check sehen wir, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.",
+  "kt.p2": "Sie bekommen die Antwort innerhalb von 2 Werktagen per E-Mail.",
+  "fm.geschaeft": "Name des Geschäfts", "fm.email": "Ihre E-Mail-Adresse", "fm.branche": "Branche",
+  "o1": "Restaurant oder Café", "o2": "Friseur oder Kosmetik", "o3": "Lebensmittelgeschäft", "o4": "Handwerk", "o5": "Anderes",
+  "fm.ort": "Ort oder Adresse", "fm.btn": "Anfrage senden",
+  "fm.hint": "Ihre Angaben werden nur verwendet, um Ihre Anfrage zu beantworten. Mehr dazu im <a href=\"datenschutz.html\">Datenschutz</a>.",
+  "err.geschaeft": "Bitte den Namen des Geschäfts eintragen.",
+  "err.email": "Bitte eine gültige E-Mail-Adresse eintragen, damit wir antworten können.",
+  "err.ort": "Bitte Ort oder Adresse eintragen.",
+  "msg.senden": "Wird gesendet …", "msg.ok": "Danke! Ihre Anfrage ist angekommen. Sie hören innerhalb von 2 Werktagen von uns.", "msg.gesendet": "Gesendet",
+  "msg.fehler": "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es in ein paar Minuten noch einmal.",
+  "ft.impressum": "Impressum", "ft.datenschutz": "Datenschutz",
+  "nav.it": "IT-Service",
+  "it.h2": "Und alles rund um Ihre IT",
+  "it.p": "Vom Kassen-PC bis zur Kamera: Wir richten ein, reparieren und betreuen. Der Preis richtet sich nach dem Aufwand, Sie bekommen vorher ein fixes Angebot.",
+  "it.st.h": "Umsatz- und Social-Media-Statistiken",
+  "it.st.p": "Übersichtliche Berichte und Dashboards: Welche Filiale, welches Produkt, welcher Beitrag bringt am meisten?",
+  "it.kam.h": "Videoüberwachung mit Hikvision",
+  "it.kam.p": "Kameras und NVR-Rekorder montieren, einrichten und optimal für Tag- und Nachtbetrieb einstellen.",
+  "it.pc.h": "Computer einrichten und reparieren",
+  "it.pc.p": "Neuer PC, langsamer Laptop oder Ärger mit Windows: Wir machen ihn wieder fit.",
+  "it.buero.h": "IT-Support fürs Büro",
+  "it.buero.p": "Netzwerk, E-Mail, Benutzerkonten und alles, was im Arbeitsalltag hakt. Eine Nachricht genügt.",
+  "it.drucker.h": "Der Drucker druckt nicht? Natürlich nicht.",
+  "it.drucker.p": "Drucker gehen immer genau dann kaputt, wenn man sie dringend braucht. Wir kennen sie alle und bringen sie wieder zum Laufen. Meistens sogar ohne Fluchen.",
+  "it.remote.h": "Fernwartung mit eigenem Server",
+  "it.remote.p": "Wir richten Ihnen einen eigenen RustDesk-Server ein. So haben Sie und wir jederzeit Zugriff auf alle Ihre Geräte, ohne Abo bei fremden Anbietern.",
+  "it.odoo.h": "Größere Projekte, z. B. mit Odoo",
+  "it.odoo.p": "Für ERP-Systeme und größere Vorhaben arbeiten wir mit erfahrenen Partnern zusammen und stellen gerne den Kontakt her.",
+  "it.umsatz.h": "Mehr Umsatz mit Datenprofis",
+  "it.umsatz.p": "Wir verbinden Sie mit Partnern, die Ihre Zahlen jedes Jahr im Detail auswerten und Wege zu mehr Umsatz suchen. Ergebnisse können nicht garantiert werden.",
+  "it.tag.klassiker": "Unser Klassiker",
+  "it.tag.partner": "Über Partner",
+  "it.cta": "IT-Anfrage senden",
+  "kt.h2": "Gratis-Check oder IT-Anfrage",
+  "kt.p1": "Für Webseite und Marketing schauen wir uns Ihren Online-Auftritt kostenlos an. Für IT-Themen bekommen Sie ein fixes Angebot.",
+  "fm.h3": "Ihre Anfrage",
+  "fm.thema": "Worum geht es?",
+  "fm.wunsch": "Ihre Nachricht (optional)",
+  "t1": "Gratis-Check Webseite & Marketing",
+  "t2": "Statistiken",
+  "t3": "Kameras & NVR",
+  "t4": "Computer & Drucker",
+  "t5": "IT-Support Büro",
+  "t6": "Fernwartung (RustDesk)",
+  "t7": "Größeres Projekt / Partner",
+  "t8": "Anderes"
+},
+en: {
+  "meta.title": "MANETIQ – IT solutions for your business, wherever you are",
+  "meta.desc": "Website, Google profile, social media and IT solutions for small businesses. One point of contact, fixed prices, free check.",
+  "nav.leistungen": "Services", "nav.preise": "Pricing", "nav.beispiele": "Examples", "nav.fragen": "FAQ", "nav.cta": "Free check",
+  "hero.h1": "Solutions for your business. Wherever you are.",
+  "hero.lead": "Website, Google profile, social media and IT for small businesses. One point of contact, fixed prices, no jargon.",
+  "hero.cta1": "Request a free check", "hero.cta2": "See pricing",
+  "hero.f1": "Online in 2 weeks", "hero.f2": "Cancel monthly after 3 months", "hero.f3": "On site or online",
+  "ph.aria": "Example: a hair salon appears at the top of a Google search, with reviews, opening hours and a website",
+  "ph.suche": "hair salon near me", "ph.r1": "4.8 (126) – Hair salon, 350 m", "ph.offen": "Open until 7 pm",
+  "ph.web": "Website", "ph.route": "Directions", "ph.anruf": "Call",
+  "ph.r2": "4.1 (9) – Hair salon, 600 m", "ph.f2": "No opening hours, no website",
+  "ph.r3": "3.9 (4) – Hair salon, 800 m", "ph.f3": "No photos", "ph.zettel": "Whoever is on top gets the call.",
+  "l.h2": "Three things that bring customers to your business",
+  "l.p": "Most customers search online first. We make sure they find you, not your competitors.",
+  "l1.h": "Website", "l1.p": "Fast, mobile-friendly, with everything customers want to know.",
+  "l1.a": "Opening hours, address, directions", "l1.b": "Menu, prices or offers", "l1.c": "Call and WhatsApp with one tap",
+  "l2.h": "Google profile", "l2.p": "The Google Maps listing people see when they search “near me”.",
+  "l2.a": "Correct hours, including holidays", "l2.b": "Good photos of your shop and products", "l2.c": "Replies to reviews",
+  "l3.h": "Social media & ads", "l3.p": "Instagram and Facebook, regularly and with a plan.",
+  "l3.a": "Posts and short videos every month", "l3.b": "Ads only for people near you", "l3.c": "Newsletter for regular customers",
+  "p.h2": "Fixed prices, no surprises",
+  "p.p": "You start with the website and then decide how much we take care of each month.",
+  "einmalig": "One-time", "monatlich": "Monthly", "promonat": "per month", "marke": "Most popular",
+  "k1.name": "Start", "k1.preis": "from €690", "k1.a": "Website with 1 to 5 pages", "k1.b": "Google profile set-up", "k1.c": "Facebook and Instagram clean-up", "k1.d": "Legal notice and privacy policy", "k1.btn": "Ask about Start",
+  "k2.name": "Visible", "k2.preis": "from €199", "k2.a": "4 to 6 posts per month", "k2.b": "Website kept up to date", "k2.c": "Google profile upkeep", "k2.d": "Short report every month", "k2.btn": "Ask about Visible",
+  "k3.name": "More customers", "k3.preis": "from €399", "k3.a": "Everything in “Visible”", "k3.b": "Facebook and Instagram ads", "k3.c": "Target audiences in your area", "k3.d": "1 newsletter per month", "k3.btn": "Ask about More customers",
+  "p.note": "With “More customers”, you pay the ad budget directly to Meta, so you see every euro yourself. Minimum term for monthly packages: 3 months.",
+  "a.h2": "How it works", "a.p": "You don't need any technical skills. We just need a few photos and your details.",
+  "s1.h": "Free check", "s1.p": "We review your presence on Google, your website and Instagram and show you 3 concrete improvements.", "s1.d": "20 minutes, free",
+  "s2.h": "Quote", "s2.p": "You get a fixed quote. No small print, no timesheets.", "s2.d": "Within 2 days",
+  "s3.h": "Build", "s3.p": "We build the website, set up the Google profile and take photos if needed. You approve everything.", "s3.d": "About 2 weeks",
+  "s4.h": "Ongoing care", "s4.p": "New posts every month, current offers and a short report on the results.", "s4.d": "Ongoing",
+  "b.h2": "Every business looks different", "b.p": "No one-size-fits-all template: the website fits your business and your customers. Three sample designs:",
+  "v1.u": "Breakfast until 2 pm, Mon to Sun", "v1.k": "Book a table", "v2.u": "Cuts, colour, updos", "v2.k": "Book now", "v3.u": "This week's offers", "v3.k": "View flyer",
+  "c1.h": "Café", "c1.p": "Menu, WhatsApp reservations, breakfast photos",
+  "c2.h": "Hair salon", "c2.p": "Online booking, price list, before-and-after gallery",
+  "c3.h": "Grocery store", "c3.p": "Weekly offers, newsletter, multilingual",
+  "u.h2": "One point of contact who knows retail",
+  "u.p1": "MANETIQ comes from IT in retail. We know what running a shop is like: little time, lots of customers and a phone that never stops ringing. So we handle the tech, and you take care of your customers.",
+  "u.p2": "You always deal with the same person, not a call centre. We support you online wherever your business is, and on site when you're nearby.",
+  "u.langs": "Advice in",
+  "f.h2": "Frequently asked questions",
+  "q1": "Do I own the website?", "a1": "Yes. The domain, website, Google profile and ad account are in your name. If you stop, you take everything with you.",
+  "q2": "Do I need to do anything myself?", "a2": "Just send a few details and photos at the start, then quickly approve posts. It takes a minute by email.",
+  "q3": "How long am I tied in?", "a3": "Monthly packages run for at least 3 months, then you can cancel monthly. You pay for the Start package only once.",
+  "q4": "How much ad budget do I need?", "a4": "Only with the “More customers” package. We discuss what makes sense during the free check. You pay it directly to Meta; we get none of it.",
+  "q5": "I already have a website. Is it still worth it?", "a5": "Often, yes. In the free check we see whether it can be improved or whether a new Google profile and regular posts would do more.",
+  "kt.p2": "You'll get a reply by email within 2 working days.",
+  "fm.geschaeft": "Business name", "fm.email": "Your email address", "fm.branche": "Industry",
+  "o1": "Restaurant or café", "o2": "Hair or beauty salon", "o3": "Grocery store", "o4": "Trades", "o5": "Other",
+  "fm.ort": "City or address", "fm.btn": "Send request",
+  "fm.hint": "Your details are only used to answer your request. More in our <a href=\"datenschutz.html\">privacy policy</a> (in German).",
+  "err.geschaeft": "Please enter your business name.",
+  "err.email": "Please enter a valid email address so we can reply.",
+  "err.ort": "Please enter your city or address.",
+  "msg.senden": "Sending …", "msg.ok": "Thank you! Your request has arrived. You'll hear from us within 2 working days.", "msg.gesendet": "Sent",
+  "msg.fehler": "Your request could not be sent. Please try again in a few minutes.",
+  "ft.impressum": "Legal notice", "ft.datenschutz": "Privacy",
+  "nav.it": "IT services",
+  "it.h2": "And everything around your IT",
+  "it.p": "From the till PC to the cameras: we set up, repair and support. The price depends on the work, and you get a fixed quote upfront.",
+  "it.st.h": "Sales and social media statistics",
+  "it.st.p": "Clear reports and dashboards: which store, which product, which post performs best?",
+  "it.kam.h": "Video surveillance with Hikvision",
+  "it.kam.p": "We install and set up cameras and NVR recorders, tuned for both day and night.",
+  "it.pc.h": "Computer set-up and repair",
+  "it.pc.p": "New PC, slow laptop or Windows trouble: we get it back in shape.",
+  "it.buero.h": "IT support for your office",
+  "it.buero.p": "Network, email, user accounts and anything that gets in the way of work. Just send a message.",
+  "it.drucker.h": "The printer won't print? Of course it won't.",
+  "it.drucker.p": "Printers always break exactly when you need them most. We know them all and get them working again. Usually without swearing.",
+  "it.remote.h": "Remote support with your own server",
+  "it.remote.p": "We set up your own RustDesk server, so you and we can access all your devices at any time, without third-party subscriptions.",
+  "it.odoo.h": "Larger projects, e.g. with Odoo",
+  "it.odoo.p": "For ERP systems and bigger undertakings, we work with experienced partners and are happy to put you in touch.",
+  "it.umsatz.h": "More revenue with data experts",
+  "it.umsatz.p": "We connect you with partners who analyse your figures in detail every year and look for ways to grow revenue. Results cannot be guaranteed.",
+  "it.tag.klassiker": "Our classic",
+  "it.tag.partner": "Via partners",
+  "it.cta": "Send an IT request",
+  "kt.h2": "Free check or IT request",
+  "kt.p1": "For website and marketing, we review your online presence for free. For IT topics, you get a fixed quote.",
+  "fm.h3": "Your request",
+  "fm.thema": "What is it about?",
+  "fm.wunsch": "Your message (optional)",
+  "t1": "Free check: website & marketing",
+  "t2": "Statistics",
+  "t3": "Cameras & NVR",
+  "t4": "Computers & printers",
+  "t5": "Office IT support",
+  "t6": "Remote support (RustDesk)",
+  "t7": "Larger project / partners",
+  "t8": "Other"
+},
+ro: {
+  "meta.title": "MANETIQ – Soluții IT pentru afacerea dvs., oriunde v-ați afla",
+  "meta.desc": "Site web, profil Google, social media și soluții IT pentru afaceri mici. O singură persoană de contact, prețuri fixe, analiză gratuită.",
+  "nav.leistungen": "Servicii", "nav.preise": "Prețuri", "nav.beispiele": "Exemple", "nav.fragen": "Întrebări", "nav.cta": "Analiză gratuită",
+  "hero.h1": "Soluții pentru afacerea dvs. Oriunde v-ați afla.",
+  "hero.lead": "Site web, profil Google, social media și IT pentru afaceri mici. O singură persoană de contact, prețuri fixe, fără jargon tehnic.",
+  "hero.cta1": "Cereți analiza gratuită", "hero.cta2": "Vedeți prețurile",
+  "hero.f1": "Online în 2 săptămâni", "hero.f2": "Reziliabil lunar după 3 luni", "hero.f3": "La fața locului sau online",
+  "ph.aria": "Exemplu: o frizerie apare prima în căutarea Google, cu recenzii, program și site",
+  "ph.suche": "frizerie în apropiere", "ph.r1": "4,8 (126) – Frizerie, 350 m", "ph.offen": "Deschis până la 19:00",
+  "ph.web": "Site", "ph.route": "Traseu", "ph.anruf": "Sună",
+  "ph.r2": "4,1 (9) – Frizerie, 600 m", "ph.f2": "Fără program, fără site",
+  "ph.r3": "3,9 (4) – Frizerie, 800 m", "ph.f3": "Fără fotografii", "ph.zettel": "Cine e primul primește apelul.",
+  "l.h2": "Trei lucruri care aduc clienți în afacerea dvs.",
+  "l.p": "Majoritatea clienților caută mai întâi online. Ne asigurăm că vă găsesc pe dvs., nu concurența.",
+  "l1.h": "Site web", "l1.p": "Rapid, arată bine pe telefon, cu tot ce vor clienții să știe.",
+  "l1.a": "Program, adresă, indicații de drum", "l1.b": "Meniu, prețuri sau oferte", "l1.c": "Apel și WhatsApp dintr-o atingere",
+  "l2.h": "Profil Google", "l2.p": "Înregistrarea din Google Maps pe care o vedeți când căutați „în apropiere”.",
+  "l2.a": "Program corect, inclusiv de sărbători", "l2.b": "Fotografii bune cu magazinul și produsele", "l2.c": "Răspunsuri la recenzii",
+  "l3.h": "Social media și reclame", "l3.p": "Instagram și Facebook, regulat și cu un plan.",
+  "l3.a": "Postări și clipuri scurte în fiecare lună", "l3.b": "Reclame doar pentru oamenii din zona dvs.", "l3.c": "Newsletter pentru clienții fideli",
+  "p.h2": "Prețuri fixe, fără surprize",
+  "p.p": "Începeți cu site-ul și apoi decideți cât preluăm noi în fiecare lună.",
+  "einmalig": "O singură dată", "monatlich": "Lunar", "promonat": "pe lună", "marke": "Cel mai ales",
+  "k1.name": "Start", "k1.preis": "de la 690 €", "k1.a": "Site cu 1–5 pagini", "k1.b": "Configurarea profilului Google", "k1.c": "Ordonarea paginilor Facebook și Instagram", "k1.d": "Date legale și politică de confidențialitate", "k1.btn": "Solicitați Start",
+  "k2.name": "Vizibil", "k2.preis": "de la 199 €", "k2.a": "4–6 postări pe lună", "k2.b": "Actualizarea site-ului", "k2.c": "Întreținerea profilului Google", "k2.d": "Raport scurt în fiecare lună", "k2.btn": "Solicitați Vizibil",
+  "k3.name": "Mai mulți clienți", "k3.preis": "de la 399 €", "k3.a": "Tot ce include „Vizibil”", "k3.b": "Reclame pe Facebook și Instagram", "k3.c": "Public țintă din zona dvs.", "k3.d": "1 newsletter pe lună", "k3.btn": "Solicitați Mai mulți clienți",
+  "p.note": "La „Mai mulți clienți”, bugetul de reclame îl plătiți direct către Meta, ca să vedeți fiecare euro. Durata minimă pentru pachetele lunare: 3 luni.",
+  "a.h2": "Cum funcționează", "a.p": "Nu aveți nevoie de cunoștințe tehnice. Avem nevoie doar de câteva fotografii și de informațiile dvs.",
+  "s1.h": "Analiză gratuită", "s1.p": "Analizăm prezența dvs. pe Google, pe site și pe Instagram și vă arătăm 3 îmbunătățiri concrete.", "s1.d": "20 de minute, gratuit",
+  "s2.h": "Ofertă", "s2.p": "Primiți o ofertă fixă. Fără clauze ascunse, fără facturare pe oră.", "s2.d": "În maximum 2 zile",
+  "s3.h": "Implementare", "s3.p": "Construim site-ul, configurăm profilul Google și facem fotografii, dacă e nevoie. Dvs. aprobați totul.", "s3.d": "Aproximativ 2 săptămâni",
+  "s4.h": "Suport continuu", "s4.p": "Postări noi în fiecare lună, oferte actuale și un raport scurt despre rezultate.", "s4.d": "Permanent",
+  "b.h2": "Fiecare afacere arată altfel", "b.p": "Nu un șablon pentru toți: site-ul se potrivește afacerii și clienților dvs. Trei exemple de design:",
+  "v1.u": "Mic dejun până la 14:00, Lu–Du", "v1.k": "Rezervă o masă", "v2.u": "Tuns, vopsit, coafuri", "v2.k": "Programează-te", "v3.u": "Ofertele săptămânii", "v3.k": "Vezi catalogul",
+  "c1.h": "Cafenea", "c1.p": "Meniu, rezervări pe WhatsApp, fotografii cu micul dejun",
+  "c2.h": "Frizerie", "c2.p": "Programare online, listă de prețuri, galerie înainte și după",
+  "c3.h": "Magazin alimentar", "c3.p": "Oferte săptămânale, newsletter, în mai multe limbi",
+  "u.h2": "O singură persoană de contact care cunoaște comerțul",
+  "u.p1": "MANETIQ vine din IT-ul din comerț. Știm cum e într-un magazin: timp puțin, mulți clienți și telefonul care sună întruna. De aceea ne ocupăm noi de partea tehnică, iar dvs. vă ocupați de clienți.",
+  "u.p2": "Vorbiți mereu cu aceeași persoană, nu cu un call center. Vă sprijinim online, oriunde ar fi afacerea dvs., iar dacă sunteți în apropiere, și la fața locului.",
+  "u.langs": "Consultanță în",
+  "f.h2": "Întrebări frecvente",
+  "q1": "Site-ul îmi aparține?", "a1": "Da. Domeniul, site-ul, profilul Google și contul de reclame sunt pe numele dvs. Dacă renunțați, luați totul cu dvs.",
+  "q2": "Trebuie să fac ceva eu?", "a2": "Doar să trimiteți la început câteva informații și fotografii, apoi să aprobați rapid postările. Durează un minut, prin e-mail.",
+  "q3": "Pentru cât timp mă angajez?", "a3": "Pachetele lunare au o durată minimă de 3 luni, apoi le puteți rezilia lunar. Pachetul Start îl plătiți o singură dată.",
+  "q4": "Ce buget de reclame îmi trebuie?", "a4": "Doar la pachetul „Mai mulți clienți”. Discutăm ce sumă are sens la analiza gratuită. Îl plătiți direct către Meta, noi nu primim nimic din el.",
+  "q5": "Am deja un site. Merită totuși?", "a5": "Adesea, da. La analiza gratuită vedem dacă poate fi îmbunătățit sau dacă un profil Google nou și postări regulate ar aduce mai mult.",
+  "kt.p2": "Primiți răspunsul pe e-mail în maximum 2 zile lucrătoare.",
+  "fm.geschaeft": "Numele afacerii", "fm.email": "Adresa dvs. de e-mail", "fm.branche": "Domeniu",
+  "o1": "Restaurant sau cafenea", "o2": "Frizerie sau cosmetică", "o3": "Magazin alimentar", "o4": "Meșteșuguri și instalații", "o5": "Altceva",
+  "fm.ort": "Oraș sau adresă", "fm.btn": "Trimiteți cererea",
+  "fm.hint": "Datele dvs. sunt folosite doar pentru a răspunde cererii. Mai multe în <a href=\"datenschutz.html\">politica de confidențialitate</a> (în germană).",
+  "err.geschaeft": "Vă rugăm să introduceți numele afacerii.",
+  "err.email": "Vă rugăm să introduceți o adresă de e-mail validă, ca să vă putem răspunde.",
+  "err.ort": "Vă rugăm să introduceți orașul sau adresa.",
+  "msg.senden": "Se trimite …", "msg.ok": "Mulțumim! Cererea dvs. a ajuns. Vă răspundem în maximum 2 zile lucrătoare.", "msg.gesendet": "Trimis",
+  "msg.fehler": "Cererea nu a putut fi trimisă. Vă rugăm să încercați din nou peste câteva minute.",
+  "ft.impressum": "Date legale", "ft.datenschutz": "Confidențialitate",
+  "nav.it": "Servicii IT",
+  "it.h2": "Și tot ce ține de IT-ul dvs.",
+  "it.p": "De la calculatorul de la casă până la camere: instalăm, reparăm și oferim suport. Prețul depinde de lucrare, iar oferta fixă o primiți dinainte.",
+  "it.st.h": "Statistici de vânzări și social media",
+  "it.st.p": "Rapoarte și dashboard-uri clare: ce magazin, ce produs, ce postare aduce cel mai mult?",
+  "it.kam.h": "Supraveghere video cu Hikvision",
+  "it.kam.p": "Montăm și configurăm camere și înregistratoare NVR, reglate optim pentru zi și noapte.",
+  "it.pc.h": "Configurare și reparații PC",
+  "it.pc.p": "PC nou, laptop lent sau probleme cu Windows: îl punem din nou pe picioare.",
+  "it.buero.h": "Suport IT pentru birou",
+  "it.buero.p": "Rețea, e-mail, conturi de utilizator și tot ce vă încurcă la lucru. Un mesaj e suficient.",
+  "it.drucker.h": "Imprimanta nu printează? Normal că nu.",
+  "it.drucker.p": "Imprimantele se strică mereu exact când ai cea mai mare nevoie de ele. Le cunoaștem pe toate și le facem să meargă din nou. De cele mai multe ori, chiar fără să înjurăm.",
+  "it.remote.h": "Asistență la distanță cu server propriu",
+  "it.remote.p": "Vă instalăm un server RustDesk propriu. Astfel, dvs. și noi avem oricând acces la toate dispozitivele, fără abonamente la terți.",
+  "it.odoo.h": "Proiecte mai mari, de ex. cu Odoo",
+  "it.odoo.p": "Pentru sisteme ERP și proiecte mai mari colaborăm cu parteneri cu experiență și vă punem bucuroși în legătură.",
+  "it.umsatz.h": "Vânzări mai mari cu experți în date",
+  "it.umsatz.p": "Vă punem în legătură cu parteneri care vă analizează cifrele în detaliu în fiecare an și caută căi de creștere a vânzărilor. Rezultatele nu pot fi garantate.",
+  "it.tag.klassiker": "Clasicul nostru",
+  "it.tag.partner": "Prin parteneri",
+  "it.cta": "Trimiteți o cerere IT",
+  "kt.h2": "Analiză gratuită sau cerere IT",
+  "kt.p1": "Pentru site și marketing, analizăm gratuit prezența dvs. online. Pentru IT, primiți o ofertă fixă.",
+  "fm.h3": "Cererea dvs.",
+  "fm.thema": "Despre ce este vorba?",
+  "fm.wunsch": "Mesajul dvs. (opțional)",
+  "t1": "Analiză gratuită: site și marketing",
+  "t2": "Statistici",
+  "t3": "Camere și NVR",
+  "t4": "Calculatoare și imprimante",
+  "t5": "Suport IT pentru birou",
+  "t6": "Asistență la distanță (RustDesk)",
+  "t7": "Proiect mai mare / parteneri",
+  "t8": "Altceva"
+}
+};
+
+/* ===== Sprache wählen und anwenden ===== */
+const SPRACHEN = ["de", "en", "ro"];
+let sprache = "de";
+const t = key => (T[sprache] && T[sprache][key]) || T.de[key] || key;
+
+function merken(l) { try { localStorage.setItem("manetiq-sprache", l); } catch (e) {} }
+function gemerkt() { try { return localStorage.getItem("manetiq-sprache"); } catch (e) { return null; } }
+
+function startSprache() {
+  const ausUrl = new URLSearchParams(location.search).get("lang");
+  if (SPRACHEN.includes(ausUrl)) return ausUrl;
+  const g = gemerkt();
+  if (SPRACHEN.includes(g)) return g;
+  const b = (navigator.language || "de").slice(0, 2).toLowerCase();
+  return b === "ro" ? "ro" : b === "en" ? "en" : "de";
+}
+
+function setzeSprache(l) {
+  sprache = SPRACHEN.includes(l) ? l : "de";
+  document.documentElement.lang = sprache;
+  document.title = t("meta.title");
+  document.querySelector('meta[name="description"]').setAttribute("content", t("meta.desc"));
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); el.className = "klein"; });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
+  document.querySelectorAll(".sprache button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === sprache)));
+}
+
+document.querySelectorAll(".sprache button").forEach(b => b.addEventListener("click", () => { setzeSprache(b.dataset.lang); merken(b.dataset.lang); }));
+setzeSprache(startSprache());
 document.getElementById("jahr").textContent = new Date().getFullYear();
 
+/* ===== Formular ===== */
+document.querySelectorAll("[data-thema]").forEach(a => a.addEventListener("click", () => {
+  const sel = document.querySelector('select[name="thema"]');
+  if (sel) sel.value = a.dataset.thema;
+}));
 const form = document.getElementById("check");
 const hinweis = document.getElementById("formhinweis");
 const knopf = form.querySelector("button");
@@ -555,36 +977,38 @@ const zeige = (text, art) => { hinweis.textContent = text; hinweis.className = "
 form.addEventListener("submit", async e => {
   e.preventDefault();
   const g = form.geschaeft.value.trim(), m = form.email.value.trim(), o = form.ort.value.trim();
-  if (!g) { zeige("Bitte den Namen des Geschäfts eintragen.", "fehler"); form.geschaeft.focus(); return; }
-  if (!m || !form.email.checkValidity()) { zeige("Bitte eine gültige E-Mail-Adresse eintragen, damit wir antworten können.", "fehler"); form.email.focus(); return; }
-  if (!o) { zeige("Bitte Bezirk oder Adresse eintragen.", "fehler"); form.ort.focus(); return; }
+  if (!g) { zeige(t("err.geschaeft"), "fehler"); form.geschaeft.focus(); return; }
+  if (!m || !form.email.checkValidity()) { zeige(t("err.email"), "fehler"); form.email.focus(); return; }
+  if (!o) { zeige(t("err.ort"), "fehler"); form.ort.focus(); return; }
   if (form.botcheck.checked) return;
 
-  knopf.disabled = true; knopf.textContent = "Wird gesendet …";
+  knopf.disabled = true; knopf.textContent = t("msg.senden");
   try {
     const antwort = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: "Neue Anfrage Gratis-Check: " + g,
+        subject: "Neue Anfrage: " + form.thema.value + " – " + g,
         from_name: "MANETIQ Webseite",
         replyto: m,
+        Thema: form.thema.value,
         Geschaeft: g,
         "E-Mail": m,
         Branche: form.branche.value,
         Ort: o,
-        Wunsch: form.wunsch.value.trim() || "–"
+        Wunsch: form.wunsch.value.trim() || "–",
+        Sprache: sprache.toUpperCase()
       })
     });
     const daten = await antwort.json();
     if (!antwort.ok || !daten.success) throw new Error(daten.message || "Fehler");
     form.reset();
-    zeige("Danke! Ihre Anfrage ist angekommen. Sie hören innerhalb von 2 Werktagen von uns.", "ok");
-    knopf.textContent = "Gesendet";
+    zeige(t("msg.ok"), "ok");
+    knopf.textContent = t("msg.gesendet");
   } catch (err) {
-    zeige("Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es in ein paar Minuten noch einmal.", "fehler");
-    knopf.disabled = false; knopf.textContent = "Anfrage senden";
+    zeige(t("msg.fehler"), "fehler");
+    knopf.disabled = false; knopf.textContent = t("fm.btn");
   }
 });
 </script>
