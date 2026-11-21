@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grätzl Digital – Webseite, Google-Profil und Social Media für Geschäfte in Wien</title>
+<meta name="description" content="Webseite, Google-Unternehmensprofil und Social Media für kleine Geschäfte in Wien. Ein Ansprechpartner, fixe Monatspreise, Gratis-Check.">
+<meta property="og:title" content="Grätzl Digital – damit man Ihr Geschäft im Grätzl findet">
+<meta property="og:description" content="Webseite, Google-Profil und Social Media für Geschäfte in Wien.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   ANPASSEN: Farben hier, Kontaktdaten ganz unten im <script>
+   ========================================================= */
+:root{
+  --blau:#1D3C78;      /* Wiener Straßenschild-Blau: Hauptfarbe */
+  --blau-dunkel:#132A57;
+  --rot:#D7262E;       /* Akzent, nur für Wichtiges */
+  --tinte:#17202E;     /* Text */
+  --grau:#5A6678;      /* leiser Text */
+  --linie:#D9DEE6;
+  --flaeche:#EEF1F5;   /* helle Fläche */
+  --weiss:#FFFFFF;
+  --gruen:#1E7F4F;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Archivo,system-ui,sans-serif;font-stretch:100%;color:var(--tinte);background:var(--weiss);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blau)}
+:focus-visible{outline:3px solid var(--rot);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-stretch:112%;line-height:1.1;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4vw,44px);font-weight:780;max-width:22ch}
+h3{font-size:21px;font-weight:700}
+p{margin:0}
+.leise{color:var(--grau)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:650;font-size:17px;text-decoration:none;border-radius:999px;padding:14px 24px;border:2px solid transparent;cursor:pointer}
+.btn-rot{background:var(--rot);color:#fff}
+.btn-rot:hover{background:#B81E25}
+.btn-linie{border-color:var(--blau);color:var(--blau);background:transparent}
+.btn-linie:hover{background:var(--flaeche)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Kopfzeile: Straßenschild */
+.kopf{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.schild{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;background:var(--blau);border:3px solid var(--blau);box-shadow:inset 0 0 0 2px #fff;border-radius:6px;padding:5px 14px 6px;font-weight:760;font-stretch:118%;font-size:17px;letter-spacing:.01em}
+.schild small{font-weight:500;font-stretch:100%;font-size:13px;opacity:.85}
+.nav{display:flex;gap:26px;align-items:center}
+.nav a{text-decoration:none;color:var(--tinte);font-size:16px}
+.nav a:hover{color:var(--blau)}
+.nav .btn{padding:10px 18px;font-size:15px;color:#fff}
+
+/* Hero */
+.hero{padding:72px 0 88px;background:linear-gradient(var(--weiss),var(--weiss)) }
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px);font-weight:800;font-stretch:115%;max-width:13ch}
+.hero .lead{font-size:21px;margin-top:22px;max-width:34ch;color:#2F3A4C}
+.hero .knoepfe{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .fakten{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;padding:0;list-style:none;font-size:16px;color:var(--grau)}
+.hero .fakten li{display:flex;gap:8px;align-items:center}
+.hero .fakten svg{width:18px;height:18px;color:var(--gruen)}
+
+/* Handy mit Suchergebnis – das eine auffällige Element */
+.buehne{position:relative;display:flex;justify-content:center}
+.handy{width:340px;max-width:100%;background:#fff;border:10px solid var(--tinte);border-radius:40px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(19,42,87,.45)}
+.karte{height:150px;position:relative;background:#E7ECE4;overflow:hidden}
+.karte .str{position:absolute;background:#fff}
+.karte .s1{left:-10px;right:-10px;top:58px;height:12px;transform:rotate(-8deg)}
+.karte .s2{top:-10px;bottom:-10px;left:120px;width:11px;transform:rotate(14deg)}
+.karte .s3{top:-10px;bottom:-10px;left:250px;width:9px;transform:rotate(-6deg)}
+.karte .s4{left:-10px;right:-10px;top:118px;height:8px;transform:rotate(4deg)}
+.karte .park{position:absolute;left:170px;top:76px;width:60px;height:34px;background:#CFE0C6;border-radius:8px}
+.pin{position:absolute;width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#9AA4B2;border:2px solid #fff}
+.pin.p1{left:200px;top:64px;background:var(--rot);width:30px;height:30px}
+.pin.p2{left:74px;top:86px}
+.pin.p3{left:282px;top:92px}
+.suche{position:absolute;left:12px;right:12px;top:10px;background:#fff;border-radius:999px;padding:8px 14px;font-size:14px;color:var(--tinte);display:flex;gap:8px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.suche svg{width:16px;height:16px;color:var(--grau)}
+.treffer{padding:10px 12px 14px;display:grid;gap:8px;background:#fff}
+.eintrag{border:1px solid var(--linie);border-radius:12px;padding:11px 12px;font-size:13.5px;line-height:1.35}
+.eintrag b{font-size:15px;display:block}
+.eintrag .zeile{color:var(--grau)}
+.eintrag.ihr{border:2px solid var(--rot);background:#FFF7F7}
+.sterne{color:#E59B00;letter-spacing:1px}
+.offen{color:var(--gruen);font-weight:600}
+.fehlt{color:#B3261E}
+.aktionen{display:flex;gap:6px;margin-top:9px}
+.aktionen span{flex:1;text-align:center;border:1px solid #C9D3E6;color:var(--blau);border-radius:999px;padding:4px 0;font-weight:600;font-size:12.5px}
+.aktionen span:first-child{background:var(--blau);color:#fff;border-color:var(--blau)}
+.eintrag.blass{opacity:.62}
+.zettel{position:absolute;right:-6px;top:150px;background:var(--tinte);color:#fff;font-size:14px;line-height:1.35;padding:10px 14px;border-radius:12px;max-width:170px;transform:rotate(3deg)}
+.zettel::before{content:"";position:absolute;left:-7px;top:22px;border:7px solid transparent;border-right-color:var(--tinte);border-left:0}
+
+/* Ladeanimation: nur einmal, nur hier */
+@media (prefers-reduced-motion:no-preference){
+  .eintrag{animation:rein .5s ease-out both}
+  .eintrag:nth-child(1){animation-delay:.35s}
+  .eintrag:nth-child(2){animation-delay:.5s}
+  .eintrag:nth-child(3){animation-delay:.65s}
+  .pin.p1{animation:fall .55s cubic-bezier(.3,1.5,.6,1) .2s both}
+  @keyframes rein{from{opacity:0;transform:translateY(10px)}}
+  @keyframes fall{from{opacity:0;transform:translateY(-30px) rotate(-45deg)}to{transform:rotate(-45deg)}}
+}
+
+/* Abschnitte */
+section{padding:96px 0}
+.kopfzeile{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.kopfzeile p{max-width:44ch;color:var(--grau)}
+.flaeche{background:var(--flaeche)}
+
+/* Leistungen als Liste mit Linien */
+.leistungen{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--tinte)}
+.leistung{padding:28px 28px 8px 0}
+.leistung+.leistung{padding-left:28px;border-left:1px solid var(--linie)}
+.leistung svg{width:34px;height:34px;color:var(--blau);margin-bottom:16px}
+.leistung p{margin-top:10px;color:#3A4558}
+.leistung ul{margin:14px 0 0;padding-left:18px;color:#3A4558;font-size:16.5px}
+
+/* Pakete */
+.pakete{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.paket{background:#fff;border:1px solid var(--linie);border-radius:var(--r);padding:30px;display:flex;flex-direction:column}
+.paket.empf{border:2px solid var(--blau);position:relative}
+.paket .marke{position:absolute;top:-14px;left:28px;background:var(--blau);color:#fff;font-size:14px;font-weight:600;border-radius:999px;padding:3px 12px}
+.paket .art{color:var(--grau);font-size:15.5px;margin-top:4px}
+.preis{margin:22px 0 4px;font-stretch:112%;font-weight:800;font-size:40px;line-height:1}
+.preis small{font-size:16px;font-weight:500;font-stretch:100%;color:var(--grau)}
+.paket ul{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:10px;font-size:16.5px}
+.paket li{display:flex;gap:10px;align-items:flex-start}
+.paket li svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--gruen)}
+.paket .btn{margin-top:auto;justify-content:center}
+.hinweis{margin-top:22px;font-size:15px;color:var(--grau)}
+
+/* Ablauf: echte Reihenfolge, daher nummeriert */
+.ablauf{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.ablauf li{counter-increment:s;position:relative;padding-top:64px}
+.ablauf li::before{content:counter(s);position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--blau);color:#fff;font-weight:750;font-size:20px;display:grid;place-items:center}
+.ablauf li:not(:last-child)::after{content:"";position:absolute;top:23px;left:58px;right:-16px;height:2px;background:var(--linie)}
+.ablauf p{margin-top:8px;color:#3A4558;font-size:16.5px}
+.ablauf .dauer{display:inline-block;margin-top:10px;font-size:14.5px;color:var(--blau);font-weight:600}
+
+/* Beispiele: kleine Browserfenster */
+.beispiele{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fenster{margin:0;border:1px solid var(--linie);border-radius:12px;overflow:hidden;background:#fff}
+.fenster .leiste{display:flex;gap:6px;align-items:center;padding:9px 12px;background:#F3F5F8;border-bottom:1px solid var(--linie);font-size:12.5px;color:var(--grau)}
+.fenster .leiste i{width:9px;height:9px;border-radius:50%;background:#C9D0DA;display:block}
+.fenster .leiste span{margin-left:8px}
+.vorschau{height:230px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.vorschau .t{font-weight:800;font-size:25px;line-height:1.05;position:relative}
+.vorschau .u{font-size:14px;margin-top:6px}
+.vorschau .k{align-self:flex-start;margin-top:14px;font-size:13px;font-weight:700;border-radius:999px;padding:6px 14px}
+.v1{background:#2D2A26;color:#F3E9DA;font-family:Georgia,serif}
+.v1 .t{font-style:italic;font-weight:700}
+.v1 .k{background:#E3B35B;color:#2D2A26;font-family:Archivo,sans-serif}
+.v1::before{content:"";position:absolute;right:22px;top:22px;width:78px;height:78px;border-radius:50%;border:2px solid #E3B35B;opacity:.7}
+.v2{background:#F4E4E8;color:#4B1F2E}
+.v2 .t{font-stretch:125%;letter-spacing:.02em}
+.v2 .k{background:#4B1F2E;color:#fff}
+.v2::before{content:"";position:absolute;inset:20px 20px auto auto;width:74px;height:84px;border-radius:60px 60px 10px 10px;background:#E3BFC9}
+.v3{background:#0F5132;color:#fff}
+.v3 .k{background:#FFD23F;color:#0F5132}
+.v3::before{content:"−25 %";position:absolute;right:20px;top:20px;background:#FFD23F;color:#0F5132;font-weight:800;font-size:22px;padding:10px 12px;border-radius:10px;transform:rotate(-6deg)}
+.fenster figcaption{padding:16px 18px;font-size:15.5px}
+.fenster figcaption b{display:block;font-size:16.5px}
+.fenster figcaption span{color:var(--grau)}
+
+/* Über mich */
+.ueber{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
+.foto{aspect-ratio:4/5;border-radius:var(--r);background:var(--flaeche);border:2px dashed #B8C2D2;display:grid;place-items:center;text-align:center;color:var(--grau);font-size:15px;padding:20px}
+.ueber p{margin-top:18px;max-width:58ch;color:#2F3A4C}
+.sprachen{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;padding:0;list-style:none}
+.sprachen li{border:1px solid var(--linie);border-radius:999px;padding:6px 14px;font-size:15.5px}
+
+/* FAQ */
+.faq{max-width:800px}
+.faq details{border-bottom:1px solid var(--linie)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-weight:650;font-size:19px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:8px;top:30px;width:11px;height:11px;border-right:2.5px solid var(--blau);border-bottom:2.5px solid var(--blau);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(225deg);top:35px}
+.faq details p{padding:0 0 22px;color:#3A4558;max-width:64ch}
+
+/* Kontakt */
+.kontakt{background:var(--blau);color:#fff}
+.kontakt .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.kontakt h2{color:#fff}
+.kontakt .lead{margin-top:18px;color:#D4DCEC;max-width:40ch}
+.wege{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
+.wege a{color:#fff;text-decoration:none;display:flex;gap:12px;align-items:center;font-size:18px}
+.wege a:hover{text-decoration:underline}
+.wege svg{width:22px;height:22px}
+form{background:#fff;color:var(--tinte);border-radius:var(--r);padding:30px;display:grid;gap:16px}
+form h3{font-size:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15.5px}
+input,select,textarea{font:inherit;font-weight:400;font-size:16.5px;border:1px solid #BFC8D6;border-radius:10px;padding:11px 13px;color:var(--tinte);background:#fff;width:100%}
+textarea{min-height:86px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blau);outline-offset:1px;border-color:var(--blau)}
+form .btn{justify-content:center;width:100%}
+form .klein{font-size:14px;color:var(--grau)}
+
+/* Fußzeile */
+footer{background:var(--blau-dunkel);color:#B9C4DA;font-size:15px;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff;margin-left:20px}
+
+/* Handy & Tablet */
+@media (max-width:980px){
+  .hero .wrap,.kontakt .wrap{grid-template-columns:1fr}
+  .buehne{margin-top:8px}
+  .pakete,.beispiele{grid-template-columns:1fr;max-width:520px}
+  .ablauf{grid-template-columns:1fr 1fr;row-gap:40px}
+  .ablauf li::after{display:none}
+  .ueber{grid-template-columns:1fr}
+  .foto{max-width:260px}
+}
+@media (max-width:760px){
+  body{font-size:17px}
+  .nav a:not(.btn){display:none}
+  section{padding:72px 0}
+  .hero{padding:44px 0 64px}
+  .leistungen{grid-template-columns:1fr}
+  .leistung,.leistung+.leistung{padding:26px 0;border-left:0;border-bottom:1px solid var(--linie)}
+  .ablauf{grid-template-columns:1fr}
+  .zettel{display:none}
+  .schild small{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="wrap">
+    <a class="schild" href="#top" aria-label="Grätzl Digital, zum Seitenanfang">Grätzl Digital <small>Wien</small></a>
+    <nav class="nav" aria-label="Hauptmenü">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#pakete">Preise</a>
+      <a href="#beispiele">Beispiele</a>
+      <a href="#faq">Fragen</a>
+      <a class="btn btn-rot" href="#kontakt">Gratis-Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="titel">
+  <div class="wrap">
+    <div>
+      <h1 id="titel">Damit man Ihr Geschäft im Grätzl findet.</h1>
+      <p class="lead">Webseite, Google-Profil und Social Media für kleine Geschäfte in Wien. Ein Ansprechpartner, fixe Preise, keine Agentur-Sprache.</p>
+      <div class="knoepfe">
+        <a class="btn btn-rot" href="#kontakt">Gratis-Check anfordern</a>
+        <a class="btn btn-linie" href="#pakete">Preise ansehen</a>
+      </div>
+      <ul class="fakten">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>In 2 Wochen online</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Monatlich kündbar nach 3 Monaten</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Persönlich vor Ort</li>
+      </ul>
+    </div>
+
+    <div class="buehne" aria-label="Beispiel: Ein Friseur erscheint bei der Google-Suche ganz oben, mit Bewertungen, Öffnungszeiten und Webseite">
+      <div class="handy" aria-hidden="true">
+        <div class="karte">
+          <div class="str s1"></div><div class="str s2"></div><div class="str s3"></div><div class="str s4"></div>
+          <div class="park"></div>
+          <div class="pin p1"></div><div class="pin p2"></div><div class="pin p3"></div>
+          <div class="suche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>friseur in der nähe</div>
+        </div>
+        <div class="treffer">
+          <div class="eintrag ihr">
+            <b>Salon Mira</b>
+            <div class="zeile"><span class="sterne">★★★★★</span> 4,8 (126) – Friseur, 350 m</div>
+            <div class="offen">Geöffnet bis 19 Uhr</div>
+            <div class="aktionen"><span>Webseite</span><span>Route</span><span>Anrufen</span></div>
+          </div>
+          <div class="eintrag blass">
+            <b>Haarstudio K.</b>
+            <div class="zeile"><span class="sterne">★★★★</span> 4,1 (9) – Friseur, 600 m</div>
+            <div class="fehlt">Öffnungszeiten fehlen, keine Webseite</div>
+          </div>
+          <div class="eintrag blass">
+            <b>Friseur am Eck</b>
+            <div class="zeile"><span class="sterne">★★★★</span> 3,9 (4) – Friseur, 800 m</div>
+            <div class="fehlt">Keine Fotos</div>
+          </div>
+        </div>
+      </div>
+      <div class="zettel" aria-hidden="true">Wer oben steht, bekommt den Anruf.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen" class="flaeche" aria-labelledby="l-titel">
+  <div class="wrap">
+    <div class="kopfzeile">
+      <h2 id="l-titel">Drei Dinge, die Kunden in Ihr Geschäft bringen</h2>
+      <p>Die meisten Leute suchen am Handy, bevor sie losgehen. Ich sorge dafür, dass sie dabei Sie finden und nicht die Konkurrenz zwei Straßen weiter.</p>
+    </div>
+    <div class="leistungen">
+      <div class="leistung">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg>
+        <h3>Webseite</h3>
+        <p>Schnell, gut am Handy, mit allem, was Kunden wissen wollen.</p>
+        <ul><li>Öffnungszeiten, Adresse, Anfahrt</li><li>Speisekarte, Preise oder Angebote</li><li>Anruf und WhatsApp mit einem Tipp</li></ul>
+      </div>
+      <div class="leistung">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <h3>Google-Profil</h3>
+        <p>Der Eintrag bei Google Maps, den man bei „in der Nähe“ sieht.</p>
+        <ul><li>Richtige Zeiten, auch an Feiertagen</li><li>Gute Fotos von Geschäft und Ware</li><li>Antworten auf Bewertungen</li></ul>
+      </div>
+      <div class="leistung">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.8" cy="7.2" r=".8" fill="currentColor"/></svg>
+        <h3>Social Media & Werbung</h3>
+        <p>Instagram und Facebook, regelmäßig und mit Plan.</p>
+        <ul><li>Beiträge und kurze Videos jeden Monat</li><li>Werbung nur für Leute in Ihrer Umgebung</li><li>Newsletter für Stammkunden</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAKETE -->
+<section id="pakete" aria-labelledby="p-titel">
+  <div class="wrap">
+    <div class="kopfzeile">
+      <h2 id="p-titel">Fixe Preise, ohne Überraschungen</h2>
+      <p>Sie starten mit der Webseite und entscheiden dann, wie viel ich jeden Monat für Sie übernehme.</p>
+    </div>
+    <div class="pakete">
+      <article class="paket">
+        <h3>Start</h3>
+        <p class="art">Einmalig</p>
+        <p class="preis">ab 690 €</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Webseite mit 1 bis 5 Seiten</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Google-Profil einrichten</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Facebook und Instagram aufräumen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Impressum und Datenschutz</li>
+        </ul>
+        <a class="btn btn-linie" href="#kontakt">Start anfragen</a>
+      </article>
+      <article class="paket empf">
+        <span class="marke">Am häufigsten gewählt</span>
+        <h3>Sichtbar</h3>
+        <p class="art">Monatlich</p>
+        <p class="preis">ab 199 € <small>pro Monat</small></p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>4 bis 6 Beiträge pro Monat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Webseite aktuell halten</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Google-Profil pflegen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Kurzer Bericht jeden Monat</li>
+        </ul>
+        <a class="btn btn-rot" href="#kontakt">Sichtbar anfragen</a>
+      </article>
+      <article class="paket">
+        <h3>Mehr Kunden</h3>
+        <p class="art">Monatlich</p>
+        <p class="preis">ab 399 € <small>pro Monat</small></p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Alles aus „Sichtbar“</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Werbung auf Facebook und Instagram</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Zielgruppen in Ihrer Umgebung</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>1 Newsletter pro Monat</li>
+        </ul>
+        <a class="btn btn-linie" href="#kontakt">Mehr Kunden anfragen</a>
+      </article>
+    </div>
+    <p class="hinweis">Das Werbebudget bei „Mehr Kunden“ zahlen Sie direkt an Meta, damit Sie jeden Euro selbst sehen. Mindestlaufzeit für Monatspakete: 3 Monate.</p>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="flaeche" aria-labelledby="a-titel">
+  <div class="wrap">
+    <div class="kopfzeile">
+      <h2 id="a-titel">So läuft es ab</h2>
+      <p>Sie müssen nichts Technisches können. Ich brauche nur ein paar Fotos und Ihre Infos.</p>
+    </div>
+    <ol class="ablauf">
+      <li><h3>Gratis-Check</h3><p>Ich schaue mir Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeige Ihnen 3 konkrete Verbesserungen.</p><span class="dauer">20 Minuten, kostenlos</span></li>
+      <li><h3>Angebot</h3><p>Sie bekommen ein fixes Angebot. Kein Kleingedrucktes, keine Stundenzettel.</p><span class="dauer">Innerhalb von 2 Tagen</span></li>
+      <li><h3>Umsetzung</h3><p>Ich baue die Webseite, richte das Google-Profil ein und mache Fotos, wenn nötig. Sie geben alles frei.</p><span class="dauer">Ca. 2 Wochen</span></li>
+      <li><h3>Betreuung</h3><p>Jeden Monat neue Beiträge, aktuelle Angebote und ein kurzer Bericht, was es gebracht hat.</p><span class="dauer">Laufend</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- BEISPIELE -->
+<section id="beispiele" aria-labelledby="b-titel">
+  <div class="wrap">
+    <div class="kopfzeile">
+      <h2 id="b-titel">Jedes Geschäft sieht anders aus</h2>
+      <p>Keine Vorlage für alle: Die Webseite passt zu Ihrem Geschäft und zu Ihren Kunden. Drei Beispielentwürfe:</p>
+    </div>
+    <div class="beispiele">
+      <figure class="fenster">
+        <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>cafe-gruenentor.at</span></div>
+        <div class="vorschau v1" aria-hidden="true"><div class="t">Café Grünentor</div><div class="u">Frühstück bis 14 Uhr, Mo bis So</div><div class="k">Tisch reservieren</div></div>
+        <figcaption><b>Café</b><span>Speisekarte, Reservierung per WhatsApp, Fotos vom Frühstück</span></figcaption>
+      </figure>
+      <figure class="fenster">
+        <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>salon-mira.at</span></div>
+        <div class="vorschau v2" aria-hidden="true"><div class="t">SALON MIRA</div><div class="u">Schnitt, Farbe, Hochsteckfrisuren</div><div class="k">Termin buchen</div></div>
+        <figcaption><b>Friseur</b><span>Online-Termin, Preisliste, Vorher-nachher-Galerie</span></figcaption>
+      </figure>
+      <figure class="fenster">
+        <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>feinkost-dunav.at</span></div>
+        <div class="vorschau v3" aria-hidden="true"><div class="t">Feinkost Dunav</div><div class="u">Aktionen dieser Woche</div><div class="k">Zum Prospekt</div></div>
+        <figcaption><b>Lebensmittelgeschäft</b><span>Wochenaktionen, Newsletter, mehrsprachig</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section class="flaeche" aria-labelledby="u-titel">
+  <div class="wrap ueber">
+    <!-- FOTO: ersetze das div durch <img class="foto" src="foto.jpg" alt="[Dein Name]"> -->
+    <div class="foto">Hier kommt Ihr Foto hin<br>(Hochformat, freundlich, natürliches Licht)</div>
+    <div>
+      <h2 id="u-titel">Ich bin [Vorname], Ihr Ansprechpartner</h2>
+      <p>Ich arbeite seit Jahren in der IT im Wiener Lebensmittelhandel. Ich weiß, wie es in einem Geschäft zugeht: wenig Zeit, viele Kunden, und das Handy klingelt ständig. Deshalb mache ich die Technik, und Sie kümmern sich um Ihre Kunden.</p>
+      <p>Sie erreichen immer mich persönlich, nicht ein Callcenter. Und wenn es schneller geht, komme ich einfach vorbei.</p>
+      <ul class="sprachen" aria-label="Sprachen">
+        <li>Deutsch</li><li>Română</li><li>Español</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="f-titel">
+  <div class="wrap">
+    <div class="kopfzeile"><h2 id="f-titel">Häufige Fragen</h2></div>
+    <div class="faq">
+      <details><summary>Gehört die Webseite mir?</summary><p>Ja. Domain, Webseite, Google-Profil und Werbekonto laufen auf Ihren Namen. Wenn Sie aufhören, nehmen Sie alles mit.</p></details>
+      <details><summary>Muss ich selbst etwas machen?</summary><p>Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per WhatsApp in einer Minute.</p></details>
+      <details><summary>Wie lange bin ich gebunden?</summary><p>Monatspakete laufen mindestens 3 Monate, danach sind sie monatlich kündbar. Das Start-Paket zahlen Sie nur einmal.</p></details>
+      <details><summary>Wie viel Werbebudget brauche ich?</summary><p>Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, ich bekomme davon nichts.</p></details>
+      <details><summary>Ich habe schon eine Webseite. Lohnt sich das trotzdem?</summary><p>Oft ja. Beim Gratis-Check sehe ich, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="kontakt" aria-labelledby="k-titel">
+  <div class="wrap">
+    <div>
+      <h2 id="k-titel">Gratis-Check für Ihr Geschäft</h2>
+      <p class="lead">Ich schaue mir Ihren Online-Auftritt an und schicke Ihnen 3 konkrete Verbesserungen. Kostenlos und ohne Verpflichtung.</p>
+      <ul class="wege">
+        <li><a class="js-whatsapp" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>WhatsApp schreiben</a></li>
+        <li><a class="js-telefon" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="js-telefon-text">Telefon</span></a></li>
+        <li><a class="js-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="js-mail-text">E-Mail</span></a></li>
+      </ul>
+    </div>
+
+    <form id="check" novalidate>
+      <h3>Gratis-Check anfordern</h3>
+      <label>Name des Geschäfts<input name="geschaeft" required autocomplete="organization"></label>
+      <label>Branche
+        <select name="branche">
+          <option>Restaurant oder Café</option><option>Friseur oder Kosmetik</option><option>Lebensmittelgeschäft</option><option>Handwerk</option><option>Anderes</option>
+        </select>
+      </label>
+      <label>Bezirk oder Adresse<input name="ort" required autocomplete="street-address"></label>
+      <label>Was soll besser werden? (optional)<textarea name="wunsch"></textarea></label>
+      <button class="btn btn-rot" type="submit">Per WhatsApp senden</button>
+      <p class="klein" id="formhinweis" role="status">Ihre Angaben gehen direkt als WhatsApp-Nachricht an mich. Es wird nichts auf dieser Seite gespeichert.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="jahr"></span> Grätzl Digital, Wien</span>
+    <span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   ANPASSEN: deine echten Kontaktdaten
+   WhatsApp-Nummer ohne +, ohne Leerzeichen, mit 43 vorne
+   ========================================================= */
+const KONTAKT = {
+  whatsapp: "436600000000",
+  telefon:  "+43 660 000 0000",
+  email:    "hallo@graetzl-digital.at"
+};
+
+const wa = text => `https://wa.me/${KONTAKT.whatsapp}?text=${encodeURIComponent(text)}`;
+document.querySelectorAll(".js-whatsapp").forEach(a => a.href = wa("Hallo, ich interessiere mich für einen Gratis-Check."));
+document.querySelectorAll(".js-telefon").forEach(a => a.href = "tel:" + KONTAKT.telefon.replace(/\s/g, ""));
+document.querySelectorAll(".js-telefon-text").forEach(s => s.textContent = KONTAKT.telefon);
+document.querySelectorAll(".js-mail").forEach(a => a.href = "mailto:" + KONTAKT.email + "?subject=Gratis-Check");
+document.querySelectorAll(".js-mail-text").forEach(s => s.textContent = KONTAKT.email);
+document.getElementById("jahr").textContent = new Date().getFullYear();
+
+document.getElementById("check").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, hinweis = document.getElementById("formhinweis");
+  const g = f.geschaeft.value.trim(), o = f.ort.value.trim();
+  if (!g || !o) {
+    hinweis.textContent = "Bitte Name des Geschäfts und Bezirk oder Adresse ausfüllen.";
+    (g ? f.ort : f.geschaeft).focus();
+    return;
+  }
+  const text = `Hallo, ich möchte einen Gratis-Check.\nGeschäft: ${g}\nBranche: ${f.branche.value}\nOrt: ${o}` + (f.wunsch.value.trim() ? `\nWunsch: ${f.wunsch.value.trim()}` : "");
+  window.open(wa(text), "_blank", "noopener");
+  hinweis.textContent = "WhatsApp wurde geöffnet. Bitte dort noch auf Senden tippen.";
+});
+</script>
+</body>
+</html>
