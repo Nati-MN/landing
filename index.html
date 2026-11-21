@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MANETIQ – IT-Lösungen für Ihr Geschäft, wo immer Sie sind</title>
 <meta name="description" content="Webseite, Google-Profil, Social Media und IT-Lösungen für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, Gratis-Check.">
@@ -78,46 +79,46 @@ p{margin:0}
 .hero .fakten li{display:flex;gap:8px;align-items:center}
 .hero .fakten svg{width:18px;height:18px;color:var(--rot)}
 
-/* Handy mit Suchergebnis – das eine auffällige Element */
-.buehne{position:relative;display:flex;justify-content:center}
-.handy{width:340px;max-width:100%;background:#fff;border:10px solid var(--tinte);border-radius:40px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(19,42,87,.45)}
-.karte{height:150px;position:relative;background:#E7ECE4;overflow:hidden}
-.karte .str{position:absolute;background:#fff}
-.karte .s1{left:-10px;right:-10px;top:58px;height:12px;transform:rotate(-8deg)}
-.karte .s2{top:-10px;bottom:-10px;left:120px;width:11px;transform:rotate(14deg)}
-.karte .s3{top:-10px;bottom:-10px;left:250px;width:9px;transform:rotate(-6deg)}
-.karte .s4{left:-10px;right:-10px;top:118px;height:8px;transform:rotate(4deg)}
-.karte .park{position:absolute;left:170px;top:76px;width:60px;height:34px;background:#CFE0C6;border-radius:8px}
-.pin{position:absolute;width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#9AA4B2;border:2px solid #fff}
-.pin.p1{left:200px;top:64px;background:var(--rot);width:30px;height:30px}
-.pin.p2{left:74px;top:86px}
-.pin.p3{left:282px;top:92px}
-.suche{position:absolute;left:12px;right:12px;top:10px;background:#fff;border-radius:999px;padding:8px 14px;font-size:14px;color:var(--tinte);display:flex;gap:8px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.suche svg{width:16px;height:16px;color:var(--grau)}
-.treffer{padding:10px 12px 14px;display:grid;gap:8px;background:#fff}
-.eintrag{border:1px solid var(--linie);border-radius:12px;padding:11px 12px;font-size:13.5px;line-height:1.35}
-.eintrag b{font-size:15px;display:block}
-.eintrag .zeile{color:var(--grau)}
-.eintrag.ihr{border:2px solid var(--rot);background:#EEF6FF;box-shadow:0 0 0 4px rgba(0,212,255,.18)}
-.sterne{color:#E59B00;letter-spacing:1px}
-.offen{color:var(--gruen);font-weight:600}
-.fehlt{color:#B3261E}
-.aktionen{display:flex;gap:6px;margin-top:9px}
-.aktionen span{flex:1;text-align:center;border:1px solid #C9D3E6;color:var(--rot);border-radius:999px;padding:4px 0;font-weight:600;font-size:12.5px}
-.aktionen span:first-child{background:var(--rot);color:#fff;border-color:var(--rot)}
-.eintrag.blass{opacity:.62}
-.zettel{position:absolute;right:-6px;top:150px;background:var(--blau);color:#fff;font-size:14px;line-height:1.35;padding:10px 14px;border-radius:12px;max-width:170px;transform:rotate(3deg)}
-.zettel::before{content:"";position:absolute;left:-7px;top:22px;border:7px solid transparent;border-right-color:var(--blau);border-left:0}
+/* Hero-Bühne: Umsatz-Dashboard + Social-Media-Post – das eine auffällige Element */
+.buehne{position:relative;display:flex;justify-content:center;min-height:460px;margin-top:40px;padding-bottom:150px}
+.hero .wrap>*{min-width:0}
+.dash{position:relative;width:400px;max-width:100%;background:#fff;color:#0B1F3B;border-radius:20px;padding:22px 22px 18px;box-shadow:0 30px 70px -20px rgba(0,123,255,.45);border:1px solid rgba(255,255,255,.6);align-self:flex-start}
+.dash-kopf{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:#56627A}
+.dash-kopf b{color:#0B1F3B;font-size:14.5px}
+.dash-live{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#56627A}
+.dash-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gruen)}
+.dash-zahl{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin-top:10px}
+.dash-zahl strong{white-space:nowrap;font-size:38px;font-weight:800;font-stretch:112%;letter-spacing:-.01em;line-height:1}
+.plus{font-size:13.5px;font-weight:700;color:var(--gruen);background:#E3F5EC;border-radius:999px;padding:3px 9px}
+.balken{display:flex;align-items:flex-end;gap:10px;height:120px;margin-top:20px;padding-bottom:4px;border-bottom:1px solid #E3E8EF}
+.balken span{flex:1;background:#D6E6FB;border-radius:6px 6px 2px 2px;height:var(--h)}
+.balken span.top{background:var(--rot)}
+.tage{display:flex;gap:10px;margin-top:6px;font-size:12px;color:#7A869A}
+.tage span{flex:1;text-align:center}
+.kacheln{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.kachel{background:#F2F4F7;border-radius:12px;padding:10px 12px;font-size:12.5px;color:#56627A}
+.kachel b{display:block;color:#0B1F3B;font-size:17px;margin-top:2px}
+.post{position:absolute;left:-40px;bottom:-30px;width:230px;background:#fff;color:#0B1F3B;border-radius:16px;overflow:hidden;box-shadow:0 24px 50px -16px rgba(0,0,0,.55);transform:rotate(-4deg);font-size:12.5px}
+.post-kopf{display:flex;align-items:center;gap:8px;padding:10px 12px}
+.post-kopf i{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FFB547,#E1306C 55%,#7B3FE4);display:block;flex:none}
+.post-kopf b{font-size:13px}
+.post-bild{height:118px;background:#2D2A26;color:#F3E9DA;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;position:relative;font-family:Georgia,serif}
+.post-bild::after{content:"";position:absolute;right:14px;top:14px;width:44px;height:44px;border-radius:50%;border:2px solid #E3B35B;opacity:.8}
+.post-bild strong{font-size:22px;font-style:italic}
+.post-bild span{font-family:Archivo,sans-serif;font-size:12px;opacity:.85}
+.post-fuss{padding:9px 12px 11px;display:flex;gap:14px;color:#56627A}
+.post-fuss b{color:#0B1F3B}
+.herz{color:#E1306C}
+.zettel{position:absolute;right:-34px;top:-50px;background:var(--rot);color:#fff;font-size:14px;line-height:1.35;padding:10px 14px;border-radius:12px;max-width:190px;transform:rotate(3deg);box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
 
-/* Ladeanimation: nur einmal, nur hier */
+/* Ladeanimation: nur einmal, nur hier – die Balken wachsen */
 @media (prefers-reduced-motion:no-preference){
-  .eintrag{animation:rein .5s ease-out both}
-  .eintrag:nth-child(1){animation-delay:.35s}
-  .eintrag:nth-child(2){animation-delay:.5s}
-  .eintrag:nth-child(3){animation-delay:.65s}
-  .pin.p1{animation:fall .55s cubic-bezier(.3,1.5,.6,1) .2s both}
-  @keyframes rein{from{opacity:0;transform:translateY(10px)}}
-  @keyframes fall{from{opacity:0;transform:translateY(-30px) rotate(-45deg)}to{transform:rotate(-45deg)}}
+  .balken span{animation:wachsen .7s cubic-bezier(.2,.8,.2,1) both}
+  .balken span:nth-child(2){animation-delay:.06s}.balken span:nth-child(3){animation-delay:.12s}.balken span:nth-child(4){animation-delay:.18s}
+  .balken span:nth-child(5){animation-delay:.24s}.balken span:nth-child(6){animation-delay:.3s}.balken span:nth-child(7){animation-delay:.36s}
+  .post{animation:rein .6s ease-out .5s both}
+  @keyframes wachsen{from{height:0}}
+  @keyframes rein{from{opacity:0}}
 }
 
 /* Abschnitte */
@@ -162,21 +163,58 @@ section{padding:96px 0}
 .fenster .leiste{display:flex;gap:6px;align-items:center;padding:9px 12px;background:#F3F5F8;border-bottom:1px solid var(--linie);font-size:12.5px;color:var(--grau)}
 .fenster .leiste i{width:9px;height:9px;border-radius:50%;background:#C9D0DA;display:block}
 .fenster .leiste span{margin-left:8px}
-.vorschau{height:230px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
-.vorschau .t{font-weight:800;font-size:25px;line-height:1.05;position:relative}
-.vorschau .u{font-size:14px;margin-top:6px}
-.vorschau .k{align-self:flex-start;margin-top:14px;font-size:13px;font-weight:700;border-radius:999px;padding:6px 14px}
-.v1{background:#2D2A26;color:#F3E9DA;font-family:Georgia,serif}
-.v1 .t{font-style:italic;font-weight:700}
-.v1 .k{background:#E3B35B;color:#2D2A26;font-family:Archivo,sans-serif}
-.v1::before{content:"";position:absolute;right:22px;top:22px;width:78px;height:78px;border-radius:50%;border:2px solid #E3B35B;opacity:.7}
-.v2{background:#F4E4E8;color:#4B1F2E}
-.v2 .t{font-stretch:125%;letter-spacing:.02em}
-.v2 .k{background:#4B1F2E;color:#fff}
-.v2::before{content:"";position:absolute;inset:20px 20px auto auto;width:74px;height:84px;border-radius:60px 60px 10px 10px;background:#E3BFC9}
-.v3{background:#0F5132;color:#fff}
-.v3 .k{background:#FFD23F;color:#0F5132}
-.v3::before{content:"−25 %";position:absolute;right:20px;top:20px;background:#FFD23F;color:#0F5132;font-weight:800;font-size:22px;padding:10px 12px;border-radius:10px;transform:rotate(-6deg)}
+.vorschau{height:290px;position:relative;overflow:hidden;font-family:Archivo,sans-serif}
+.fenster:hover .mini{transform:scale(1.025)}
+.mini{position:absolute;inset:0;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mini-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;font-size:10.5px}
+.mini-nav b{font-size:12px;letter-spacing:.02em}
+.mini-nav .links{display:flex;gap:9px;opacity:.75}
+.mini-btn{display:inline-block;font-size:10.5px;font-weight:700;border-radius:999px;padding:6px 11px}
+
+/* Beispiel 1: Café – ruhig, Salbeigrün, großes Foto */
+.v1{background:#EDF0E8;color:#1F2D24}
+.v1 .mini-nav .mini-btn{background:#1F2D24;color:#EDF0E8;padding:5px 10px}
+.v1-held{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;padding:6px 14px 0}
+.v1-held h4{margin:0;font-family:Georgia,serif;font-weight:400;font-size:27px;line-height:1.02;letter-spacing:-.02em}
+.v1-held h4 em{font-style:italic;color:#4F7A5A}
+.v1-held p{font-size:10.5px;margin:8px 0 10px;opacity:.75;line-height:1.4}
+.v1-held .mini-btn{background:#4F7A5A;color:#fff}
+.v1-foto{height:150px;border-radius:14px 14px 70px 14px;background:radial-gradient(circle at 38% 42%,#F6E7C8 0 17%,#C9934E 18% 24%,transparent 25%),radial-gradient(circle at 68% 66%,#3B2A1E 0 13%,#E8D5B5 14% 19%,transparent 20%),linear-gradient(135deg,#9FB79F,#5E7F66)}
+.v1-karte{display:flex;gap:6px;padding:12px 14px 0}
+.v1-karte span{flex:1;background:#fff;border-radius:10px;padding:7px 8px;font-size:10px;line-height:1.3;box-shadow:0 2px 6px rgba(31,45,36,.08)}
+.v1-karte b{display:block;font-size:11px}
+
+/* Beispiel 2: Friseur – Schwarz-Weiß, große Schrift, Termin-Widget */
+.v2{background:#0E0E0E;color:#F5F2EE}
+.v2 .mini-nav b{letter-spacing:.18em}
+.v2-titel{padding:8px 14px 0;font-size:44px;font-weight:800;font-stretch:125%;line-height:.9;letter-spacing:-.02em}
+.v2-titel span{display:block;-webkit-text-stroke:1px #F5F2EE;color:transparent}
+.v2-sub{padding:8px 14px;font-size:10.5px;opacity:.7}
+.v2-termin{position:absolute;left:14px;right:14px;bottom:14px;background:#F5F2EE;color:#0E0E0E;border-radius:14px;padding:10px 12px}
+.v2-termin small{font-size:10px;opacity:.6}
+.v2-slots{display:flex;gap:6px;margin-top:6px}
+.v2-slots i{font-style:normal;font-size:10.5px;font-weight:700;border:1px solid #CFC8BF;border-radius:8px;padding:5px 0;flex:1;text-align:center}
+.v2-slots i.an{background:#0E0E0E;color:#F5F2EE;border-color:#0E0E0E}
+.v2-kreis{position:absolute;right:-30px;top:40px;width:130px;height:130px;border-radius:50%;background:conic-gradient(from 200deg,#C8A27A,#6B4B3A,#C8A27A);opacity:.85}
+
+/* Beispiel 3: Lebensmittel – kräftig, Produktkacheln mit Preisen */
+.v3{background:#FFF7E0;color:#13361F}
+.v3 .mini-nav{background:#13361F;color:#FFF7E0}
+.v3-band{display:flex;align-items:center;justify-content:space-between;padding:10px 14px}
+.v3-band h4{margin:0;font-size:19px;font-weight:800;line-height:1.05}
+.v3-band .mini-btn{background:#FFC83D;color:#13361F}
+.v3-raster{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:0 14px}
+.v3-raster div{position:relative;background:#fff;border-radius:12px;padding:8px;font-size:10px;box-shadow:0 2px 8px rgba(19,54,31,.08)}
+.v3-raster div i{display:block;height:58px;border-radius:8px;margin-bottom:6px}
+.v3-raster div:nth-child(1) i{background:radial-gradient(circle at 50% 60%,#D4442E 0 30%,#F2C9B8 31% 36%,#FBE9E2 37%)}
+.v3-raster div:nth-child(2) i{background:radial-gradient(circle at 50% 55%,#FFF8EC 0 34%,#EBDCC2 35% 40%,#F6EEDD 41%)}
+.v3-raster div:nth-child(3) i{background:radial-gradient(ellipse at 50% 60%,#C88A3E 0 32%,#E9C892 33% 40%,#F7ECD6 41%)}
+.v3-raster b{display:block;font-size:11px}
+.v3-raster s{opacity:.5;margin-right:4px}
+.v3-raster em{font-style:normal;font-weight:800;color:#C0392B}
+.v3-news{position:absolute;left:14px;right:14px;bottom:14px;background:#13361F;color:#FFF7E0;border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:10.5px;font-weight:600}
+.v3-news i{font-style:normal;font-weight:400;background:#FFF7E0;color:#13361F;opacity:.85;border-radius:8px;padding:5px 8px;font-size:10px}
+.v3-raster u{position:absolute;top:6px;right:6px;text-decoration:none;background:#FFC83D;color:#13361F;font-weight:800;font-size:9.5px;border-radius:6px;padding:2px 5px}
 .fenster figcaption{padding:16px 18px;font-size:15.5px}
 .fenster figcaption b{display:block;font-size:16.5px}
 .fenster figcaption span{color:var(--grau)}
@@ -236,10 +274,6 @@ footer a{color:#fff;margin-left:20px}
 .btn-linie:hover{background:rgba(77,166,255,.12)}
 .hero{background:radial-gradient(900px 500px at 85% 30%,rgba(0,123,255,.22),transparent 70%),var(--weiss)}
 .hero .lead{color:#C9D6EA}
-.handy{color:#0B1F3B;--grau:#56627A;--linie:#DDE2EA;border-color:#22395E;box-shadow:0 30px 70px -20px rgba(0,123,255,.35)}
-.suche{color:#0B1F3B}
-.zettel{background:var(--rot);color:#fff}
-.zettel::before{border-right-color:var(--rot)}
 .leistungen{border-top-color:var(--cyan)}
 .leistung p,.leistung ul,.ablauf p,.faq details p{color:#C3D0E3}
 .leistung svg{color:var(--cyan)}
@@ -281,6 +315,11 @@ footer{background:var(--blau-dunkel)}
   .leistung,.leistung+.leistung{padding:26px 0;border-left:0;border-bottom:1px solid var(--linie)}
   .ablauf{grid-template-columns:1fr}
   .zettel{display:none}
+  .post{position:relative;left:auto;bottom:auto;margin:-30px 0 0 12px}
+  .dash{padding:18px 16px 16px}
+  .dash-zahl strong{font-size:32px}
+  .balken,.tage{gap:6px}
+  .buehne{flex-direction:column;align-items:center;min-height:0;padding-bottom:0}
 }
 
 
@@ -298,6 +337,20 @@ footer{background:var(--blau-dunkel)}
 @media (max-width:1100px){.it-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.it-grid{grid-template-columns:1fr}}
 
+
+/* ===== Bewegung beim Scrollen ===== */
+.kopf{transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s}
+.kopf .wrap{transition:height .3s}
+.kopf.klein{background:rgba(6,20,41,.97);box-shadow:0 10px 30px -18px rgba(0,0,0,.8)}
+.kopf.klein .wrap{height:60px}
+.kopf.weg{transform:translateY(-100%)}
+.fortschritt{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--rot),var(--cyan));z-index:20;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  html.js .zeigen{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 70ms)}
+  html.js .zeigen.da{opacity:1;transform:none}
+  .dash,.post,.zettel{will-change:transform}
+}
+
 /* Sprachumschalter */
 .sprache{display:flex;gap:2px;border:1px solid var(--linie);border-radius:999px;padding:3px}
 .sprache button{font:inherit;font-size:13.5px;font-weight:650;color:var(--grau);background:none;border:0;border-radius:999px;padding:6px 10px;cursor:pointer;line-height:1}
@@ -309,6 +362,7 @@ footer{background:var(--blau-dunkel)}
 </style>
 </head>
 <body>
+<div class="fortschritt" aria-hidden="true"></div>
 
 <header class="kopf">
   <div class="wrap">
@@ -316,7 +370,7 @@ footer{background:var(--blau-dunkel)}
     <nav class="nav" aria-label="Menü">
       <a href="#leistungen" data-i18n="nav.leistungen">Leistungen</a>
       <a href="#it" data-i18n="nav.it">IT-Service</a>
-      <a href="#pakete" data-i18n="nav.preise">Preise</a>
+      <a href="#ablauf" data-i18n="nav.ablauf">Ablauf</a>
       <a href="#faq" data-i18n="nav.fragen">Fragen</a>
       <div class="sprache" role="group" aria-label="Sprache / Language / Limbă">
         <button type="button" data-lang="de" lang="de" aria-pressed="true" title="Deutsch">DE</button>
@@ -338,7 +392,7 @@ footer{background:var(--blau-dunkel)}
       <p class="lead" data-i18n="hero.lead">Webseite, Google-Profil, Social Media und IT für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, kein Fachchinesisch.</p>
       <div class="knoepfe">
         <a class="btn btn-rot" href="#kontakt" data-i18n="hero.cta1">Gratis-Check anfordern</a>
-        <a class="btn btn-linie" href="#pakete" data-i18n="hero.cta2">Preise ansehen</a>
+        <a class="btn btn-linie" href="#leistungen" data-i18n="hero.cta2">Preise ansehen</a>
       </div>
       <ul class="fakten">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.f1">In 2 Wochen online</span></li>
@@ -347,34 +401,23 @@ footer{background:var(--blau-dunkel)}
       </ul>
     </div>
 
-    <div class="buehne" role="img" data-i18n-aria="ph.aria" aria-label="Beispiel: Ein Friseur erscheint bei der Google-Suche ganz oben, mit Bewertungen, Öffnungszeiten und Webseite">
-      <div class="handy" aria-hidden="true">
-        <div class="karte">
-          <div class="str s1"></div><div class="str s2"></div><div class="str s3"></div><div class="str s4"></div>
-          <div class="park"></div>
-          <div class="pin p1"></div><div class="pin p2"></div><div class="pin p3"></div>
-          <div class="suche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span data-i18n="ph.suche">friseur in der nähe</span></div>
-        </div>
-        <div class="treffer">
-          <div class="eintrag ihr">
-            <b>Salon Mira</b>
-            <div class="zeile"><span class="sterne">★★★★★</span> <span data-i18n="ph.r1">4,8 (126) – Friseur, 350 m</span></div>
-            <div class="offen" data-i18n="ph.offen">Geöffnet bis 19 Uhr</div>
-            <div class="aktionen"><span data-i18n="ph.web">Webseite</span><span data-i18n="ph.route">Route</span><span data-i18n="ph.anruf">Anrufen</span></div>
-          </div>
-          <div class="eintrag blass">
-            <b>Haarstudio K.</b>
-            <div class="zeile"><span class="sterne">★★★★</span> <span data-i18n="ph.r2">4,1 (9) – Friseur, 600 m</span></div>
-            <div class="fehlt" data-i18n="ph.f2">Öffnungszeiten fehlen, keine Webseite</div>
-          </div>
-          <div class="eintrag blass">
-            <b>Friseur am Eck</b>
-            <div class="zeile"><span class="sterne">★★★★</span> <span data-i18n="ph.r3">3,9 (4) – Friseur, 800 m</span></div>
-            <div class="fehlt" data-i18n="ph.f3">Keine Fotos</div>
-          </div>
+    <div class="buehne" role="img" data-i18n-aria="ph.aria" aria-label="">
+      <div class="dash" aria-hidden="true">
+        <div class="dash-kopf"><b data-i18n="ph.titel"></b><span class="dash-live" data-i18n="ph.live"></span></div>
+        <div class="dash-zahl"><strong>€ 18.420</strong><span class="plus" data-i18n="ph.plus"></span></div>
+        <div class="balken"><span style="--h:52%"></span><span style="--h:60%"></span><span style="--h:57%"></span><span style="--h:68%"></span><span style="--h:82%"></span><span class="top" style="--h:100%"></span><span style="--h:34%"></span></div>
+        <div class="tage"><span data-i18n="ph.d1"></span><span data-i18n="ph.d2"></span><span data-i18n="ph.d3"></span><span data-i18n="ph.d4"></span><span data-i18n="ph.d5"></span><span data-i18n="ph.d6"></span><span data-i18n="ph.d7"></span></div>
+        <div class="kacheln">
+          <div class="kachel"><span data-i18n="ph.k1"></span><b>1.284</b></div>
+          <div class="kachel"><span data-i18n="ph.k2"></span><b>+2.310</b></div>
         </div>
       </div>
-      <div class="zettel" aria-hidden="true" data-i18n="ph.zettel">Wer oben steht, bekommt den Anruf.</div>
+      <div class="post" aria-hidden="true">
+        <div class="post-kopf"><i></i><b>cafe.gruenentor</b></div>
+        <div class="post-bild"><strong data-i18n="ph.post1"></strong><span data-i18n="ph.post2"></span></div>
+        <div class="post-fuss"><span><span class="herz">♥</span> <b>248</b></span><span><b>31</b> <span data-i18n="ph.komm"></span></span></div>
+      </div>
+      <div class="zettel" aria-hidden="true" data-i18n="ph.zettel"></div>
     </div>
   </div>
 </section>
@@ -462,58 +505,8 @@ footer{background:var(--blau-dunkel)}
   </div>
 </section>
 
-<!-- PAKETE -->
-<section id="pakete" class="flaeche" aria-labelledby="p-titel">
-  <div class="wrap">
-    <div class="kopfzeile">
-      <h2 id="p-titel" data-i18n="p.h2">Fixe Preise, ohne Überraschungen</h2>
-      <p data-i18n="p.p">Sie starten mit der Webseite und entscheiden dann, wie viel wir jeden Monat für Sie übernehmen.</p>
-    </div>
-    <div class="pakete">
-      <article class="paket">
-        <h3 data-i18n="k1.name">Start</h3>
-        <p class="art" data-i18n="einmalig">Einmalig</p>
-        <p class="preis" data-i18n="k1.preis">ab 690 €</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.a">Webseite mit 1 bis 5 Seiten</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.b">Google-Profil einrichten</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.c">Facebook und Instagram aufräumen</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k1.d">Impressum und Datenschutz</span></li>
-        </ul>
-        <a class="btn btn-linie" href="#kontakt" data-i18n="k1.btn">Start anfragen</a>
-      </article>
-      <article class="paket empf">
-        <span class="marke" data-i18n="marke">Am häufigsten gewählt</span>
-        <h3 data-i18n="k2.name">Sichtbar</h3>
-        <p class="art" data-i18n="monatlich">Monatlich</p>
-        <p class="preis"><span data-i18n="k2.preis">ab 199 €</span> <small data-i18n="promonat">pro Monat</small></p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.a">4 bis 6 Beiträge pro Monat</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.b">Webseite aktuell halten</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.c">Google-Profil pflegen</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k2.d">Kurzer Bericht jeden Monat</span></li>
-        </ul>
-        <a class="btn btn-rot" href="#kontakt" data-i18n="k2.btn">Sichtbar anfragen</a>
-      </article>
-      <article class="paket">
-        <h3 data-i18n="k3.name">Mehr Kunden</h3>
-        <p class="art" data-i18n="monatlich">Monatlich</p>
-        <p class="preis"><span data-i18n="k3.preis">ab 399 €</span> <small data-i18n="promonat">pro Monat</small></p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.a">Alles aus „Sichtbar“</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.b">Werbung auf Facebook und Instagram</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.c">Zielgruppen in Ihrer Umgebung</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="k3.d">1 Newsletter pro Monat</span></li>
-        </ul>
-        <a class="btn btn-linie" href="#kontakt" data-i18n="k3.btn">Mehr Kunden anfragen</a>
-      </article>
-    </div>
-    <p class="hinweis" data-i18n="p.note">Das Werbebudget bei „Mehr Kunden“ zahlen Sie direkt an Meta, damit Sie jeden Euro selbst sehen. Mindestlaufzeit für Monatspakete: 3 Monate.</p>
-  </div>
-</section>
-
 <!-- ABLAUF -->
-<section aria-labelledby="a-titel">
+<section id="ablauf" class="flaeche" aria-labelledby="a-titel">
   <div class="wrap">
     <div class="kopfzeile">
       <h2 id="a-titel" data-i18n="a.h2">So läuft es ab</h2>
@@ -529,7 +522,7 @@ footer{background:var(--blau-dunkel)}
 </section>
 
 <!-- BEISPIELE -->
-<section id="beispiele" class="flaeche" aria-labelledby="b-titel">
+<section id="beispiele" aria-labelledby="b-titel">
   <div class="wrap">
     <div class="kopfzeile">
       <h2 id="b-titel" data-i18n="b.h2">Jedes Geschäft sieht anders aus</h2>
@@ -538,25 +531,47 @@ footer{background:var(--blau-dunkel)}
     <div class="beispiele">
       <figure class="fenster">
         <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>cafe-gruenentor.at</span></div>
-        <div class="vorschau v1" aria-hidden="true"><div class="t">Café Grünentor</div><div class="u" data-i18n="v1.u">Frühstück bis 14 Uhr, Mo bis So</div><div class="k" data-i18n="v1.k">Tisch reservieren</div></div>
-        <figcaption><b data-i18n="c1.h">Café</b><span data-i18n="c1.p">Speisekarte, Reservierung per WhatsApp, Fotos vom Frühstück</span></figcaption>
+        <div class="vorschau v1" aria-hidden="true"><div class="mini">
+          <div class="mini-nav"><b>Grünentor</b><span class="links"><span data-i18n="ex.menu"></span><span data-i18n="ex.about"></span></span><span class="mini-btn" data-i18n="v1.k"></span></div>
+          <div class="v1-held">
+            <div><h4>Café <em>Grünentor</em></h4><p data-i18n="v1.u"></p><span class="mini-btn" data-i18n="ex.speise"></span></div>
+            <div class="v1-foto"></div>
+          </div>
+          <div class="v1-karte"><span><b>Flat White</b>3,90 €</span><span><b>Avocado Toast</b>9,50 €</span><span><b>Croissant</b>2,80 €</span></div>
+        </div></div>
+        <figcaption><b data-i18n="c1.h"></b><span data-i18n="c1.p"></span></figcaption>
       </figure>
       <figure class="fenster">
         <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>salon-mira.at</span></div>
-        <div class="vorschau v2" aria-hidden="true"><div class="t">SALON MIRA</div><div class="u" data-i18n="v2.u">Schnitt, Farbe, Hochsteckfrisuren</div><div class="k" data-i18n="v2.k">Termin buchen</div></div>
-        <figcaption><b data-i18n="c2.h">Friseur</b><span data-i18n="c2.p">Online-Termin, Preisliste, Vorher-nachher-Galerie</span></figcaption>
+        <div class="vorschau v2" aria-hidden="true"><div class="mini">
+          <div class="v2-kreis"></div>
+          <div class="mini-nav"><b>MIRA</b><span class="links"><span data-i18n="ex.preise"></span><span data-i18n="ex.team"></span></span></div>
+          <div class="v2-titel">SALON<span>MIRA</span></div>
+          <div class="v2-sub" data-i18n="v2.u"></div>
+          <div class="v2-termin"><small data-i18n="ex.slots"></small><div class="v2-slots"><i>10:00</i><i class="an">11:30</i><i>14:00</i><i>16:30</i></div></div>
+        </div></div>
+        <figcaption><b data-i18n="c2.h"></b><span data-i18n="c2.p"></span></figcaption>
       </figure>
       <figure class="fenster">
         <div class="leiste" aria-hidden="true"><i></i><i></i><i></i><span>feinkost-dunav.at</span></div>
-        <div class="vorschau v3" aria-hidden="true"><div class="t">Feinkost Dunav</div><div class="u" data-i18n="v3.u">Aktionen dieser Woche</div><div class="k" data-i18n="v3.k">Zum Prospekt</div></div>
-        <figcaption><b data-i18n="c3.h">Lebensmittelgeschäft</b><span data-i18n="c3.p">Wochenaktionen, Newsletter, mehrsprachig</span></figcaption>
+        <div class="vorschau v3" aria-hidden="true"><div class="mini">
+          <div class="mini-nav"><b>DUNAV</b><span class="links"><span data-i18n="ex.angebote"></span><span data-i18n="ex.filialen"></span></span></div>
+          <div class="v3-band"><h4 data-i18n="v3.u"></h4><span class="mini-btn" data-i18n="v3.k"></span></div>
+          <div class="v3-raster">
+            <div><u>−25%</u><i></i><b>Ajvar</b><s>3,99</s><em>2,99 €</em></div>
+            <div><i></i><b>Kajmak</b><em>4,49 €</em></div>
+            <div><u>−20%</u><i></i><b>Burek</b><s>3,50</s><em>2,80 €</em></div>
+          </div>
+          <div class="v3-news"><span data-i18n="ex.news"></span><i>name@mail.at</i></div>
+        </div></div>
+        <figcaption><b data-i18n="c3.h"></b><span data-i18n="c3.p"></span></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
 <!-- WARUM MANETIQ -->
-<section aria-labelledby="u-titel">
+<section class="flaeche" aria-labelledby="u-titel">
   <div class="wrap ueber">
     <div>
       <h2 id="u-titel" data-i18n="u.h2">Ein Ansprechpartner, der den Handel kennt</h2>
@@ -570,7 +585,7 @@ footer{background:var(--blau-dunkel)}
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="flaeche" aria-labelledby="f-titel">
+<section id="faq" aria-labelledby="f-titel">
   <div class="wrap">
     <div class="kopfzeile"><h2 id="f-titel" data-i18n="f.h2">Häufige Fragen</h2></div>
     <div class="faq">
@@ -646,18 +661,45 @@ const WEB3FORMS_KEY = "HIER_DEINEN_ACCESS_KEY_EINFUEGEN";
 /* ===== Texte in 3 Sprachen ===== */
 const T = {
 de: {
+  "ex.news": "Newsletter: Angebote jeden Donnerstag",
+  "ex.menu": "Karte",
+  "ex.about": "Über uns",
+  "ex.speise": "Zur Speisekarte",
+  "ex.preise": "Preise",
+  "ex.team": "Team",
+  "ex.slots": "Freie Termine heute",
+  "ex.angebote": "Angebote",
+  "ex.filialen": "Filialen",
+  "v1.u": "Frühstück und Kaffee, täglich ab 7 Uhr.",
+  "v3.u": "Aktionen dieser Woche",
+  "ph.aria": "Beispiel: Umsatz-Dashboard einer Woche und ein erfolgreicher Instagram-Beitrag",
+  "ph.titel": "Umsatz diese Woche",
+  "ph.live": "Live",
+  "ph.plus": "+12 % zur Vorwoche",
+  "ph.d1": "Mo",
+  "ph.d2": "Di",
+  "ph.d3": "Mi",
+  "ph.d4": "Do",
+  "ph.d5": "Fr",
+  "ph.d6": "Sa",
+  "ph.d7": "So",
+  "ph.k1": "Kunden",
+  "ph.k2": "Reichweite Instagram",
+  "ph.post1": "Frühstück −20 %",
+  "ph.post2": "Nur diesen Samstag",
+  "ph.komm": "Kommentare",
+  "ph.zettel": "Zahlen zeigen, was wirkt.",
+  "nav.ablauf": "Ablauf",
+  "hero.cta2": "Leistungen ansehen",
+  "hero.f2": "Fixes Angebot vorab",
+  "a3": "Bei laufender Betreuung mindestens 3 Monate, danach monatlich kündbar. Einmalige Arbeiten zahlen Sie nur einmal.",
+  "a4": "Nur wenn Sie bezahlte Werbung möchten. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, wir bekommen davon nichts.",
   "meta.title": "MANETIQ – IT-Lösungen für Ihr Geschäft, wo immer Sie sind",
   "meta.desc": "Webseite, Google-Profil, Social Media und IT-Lösungen für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, Gratis-Check.",
-  "nav.leistungen": "Leistungen", "nav.preise": "Preise", "nav.beispiele": "Beispiele", "nav.fragen": "Fragen", "nav.cta": "Gratis-Check",
+  "nav.leistungen": "Leistungen", "nav.beispiele": "Beispiele", "nav.fragen": "Fragen", "nav.cta": "Gratis-Check",
   "hero.h1": "Lösungen für Ihr Geschäft. Wo immer Sie sind.",
   "hero.lead": "Webseite, Google-Profil, Social Media und IT für kleine Unternehmen. Ein Ansprechpartner, fixe Preise, kein Fachchinesisch.",
-  "hero.cta1": "Gratis-Check anfordern", "hero.cta2": "Preise ansehen",
-  "hero.f1": "In 2 Wochen online", "hero.f2": "Monatlich kündbar nach 3 Monaten", "hero.f3": "Vor Ort oder online",
-  "ph.aria": "Beispiel: Ein Friseur erscheint bei der Google-Suche ganz oben, mit Bewertungen, Öffnungszeiten und Webseite",
-  "ph.suche": "friseur in der nähe", "ph.r1": "4,8 (126) – Friseur, 350 m", "ph.offen": "Geöffnet bis 19 Uhr",
-  "ph.web": "Webseite", "ph.route": "Route", "ph.anruf": "Anrufen",
-  "ph.r2": "4,1 (9) – Friseur, 600 m", "ph.f2": "Öffnungszeiten fehlen, keine Webseite",
-  "ph.r3": "3,9 (4) – Friseur, 800 m", "ph.f3": "Keine Fotos", "ph.zettel": "Wer oben steht, bekommt den Anruf.",
+  "hero.cta1": "Gratis-Check anfordern", "hero.f1": "In 2 Wochen online", "hero.f3": "Vor Ort oder online",
   "l.h2": "Drei Dinge, die Kunden in Ihr Geschäft bringen",
   "l.p": "Die meisten Kunden suchen zuerst online. Wir sorgen dafür, dass sie dabei Sie finden und nicht die Konkurrenz.",
   "l1.h": "Webseite", "l1.p": "Schnell, gut am Handy, mit allem, was Kunden wissen wollen.",
@@ -666,20 +708,13 @@ de: {
   "l2.a": "Richtige Zeiten, auch an Feiertagen", "l2.b": "Gute Fotos von Geschäft und Ware", "l2.c": "Antworten auf Bewertungen",
   "l3.h": "Social Media & Werbung", "l3.p": "Instagram und Facebook, regelmäßig und mit Plan.",
   "l3.a": "Beiträge und kurze Videos jeden Monat", "l3.b": "Werbung nur für Leute in Ihrer Umgebung", "l3.c": "Newsletter für Stammkunden",
-  "p.h2": "Fixe Preise, ohne Überraschungen",
-  "p.p": "Sie starten mit der Webseite und entscheiden dann, wie viel wir jeden Monat für Sie übernehmen.",
-  "einmalig": "Einmalig", "monatlich": "Monatlich", "promonat": "pro Monat", "marke": "Am häufigsten gewählt",
-  "k1.name": "Start", "k1.preis": "ab 690 €", "k1.a": "Webseite mit 1 bis 5 Seiten", "k1.b": "Google-Profil einrichten", "k1.c": "Facebook und Instagram aufräumen", "k1.d": "Impressum und Datenschutz", "k1.btn": "Start anfragen",
-  "k2.name": "Sichtbar", "k2.preis": "ab 199 €", "k2.a": "4 bis 6 Beiträge pro Monat", "k2.b": "Webseite aktuell halten", "k2.c": "Google-Profil pflegen", "k2.d": "Kurzer Bericht jeden Monat", "k2.btn": "Sichtbar anfragen",
-  "k3.name": "Mehr Kunden", "k3.preis": "ab 399 €", "k3.a": "Alles aus „Sichtbar“", "k3.b": "Werbung auf Facebook und Instagram", "k3.c": "Zielgruppen in Ihrer Umgebung", "k3.d": "1 Newsletter pro Monat", "k3.btn": "Mehr Kunden anfragen",
-  "p.note": "Das Werbebudget bei „Mehr Kunden“ zahlen Sie direkt an Meta, damit Sie jeden Euro selbst sehen. Mindestlaufzeit für Monatspakete: 3 Monate.",
   "a.h2": "So läuft es ab", "a.p": "Sie müssen nichts Technisches können. Wir brauchen nur ein paar Fotos und Ihre Infos.",
   "s1.h": "Gratis-Check", "s1.p": "Wir schauen uns Ihren Auftritt bei Google, auf der Webseite und auf Instagram an und zeigen Ihnen 3 konkrete Verbesserungen.", "s1.d": "20 Minuten, kostenlos",
   "s2.h": "Angebot", "s2.p": "Sie bekommen ein fixes Angebot. Kein Kleingedrucktes, keine Stundenzettel.", "s2.d": "Innerhalb von 2 Tagen",
   "s3.h": "Umsetzung", "s3.p": "Wir bauen die Webseite, richten das Google-Profil ein und machen Fotos, wenn nötig. Sie geben alles frei.", "s3.d": "Ca. 2 Wochen",
   "s4.h": "Betreuung", "s4.p": "Jeden Monat neue Beiträge, aktuelle Angebote und ein kurzer Bericht, was es gebracht hat.", "s4.d": "Laufend",
   "b.h2": "Jedes Geschäft sieht anders aus", "b.p": "Keine Vorlage für alle: Die Webseite passt zu Ihrem Geschäft und zu Ihren Kunden. Drei Beispielentwürfe:",
-  "v1.u": "Frühstück bis 14 Uhr, Mo bis So", "v1.k": "Tisch reservieren", "v2.u": "Schnitt, Farbe, Hochsteckfrisuren", "v2.k": "Termin buchen", "v3.u": "Aktionen dieser Woche", "v3.k": "Zum Prospekt",
+  "v1.k": "Tisch reservieren", "v2.u": "Schnitt, Farbe, Hochsteckfrisuren", "v2.k": "Termin buchen", "v3.k": "Zum Prospekt",
   "c1.h": "Café", "c1.p": "Speisekarte, Reservierung per WhatsApp, Fotos vom Frühstück",
   "c2.h": "Friseur", "c2.p": "Online-Termin, Preisliste, Vorher-nachher-Galerie",
   "c3.h": "Lebensmittelgeschäft", "c3.p": "Wochenaktionen, Newsletter, mehrsprachig",
@@ -690,9 +725,7 @@ de: {
   "f.h2": "Häufige Fragen",
   "q1": "Gehört die Webseite mir?", "a1": "Ja. Domain, Webseite, Google-Profil und Werbekonto laufen auf Ihren Namen. Wenn Sie aufhören, nehmen Sie alles mit.",
   "q2": "Muss ich selbst etwas machen?", "a2": "Nur am Anfang ein paar Infos und Fotos schicken und danach Beiträge kurz freigeben. Das geht per E-Mail in einer Minute.",
-  "q3": "Wie lange bin ich gebunden?", "a3": "Monatspakete laufen mindestens 3 Monate, danach sind sie monatlich kündbar. Das Start-Paket zahlen Sie nur einmal.",
-  "q4": "Wie viel Werbebudget brauche ich?", "a4": "Nur beim Paket „Mehr Kunden“. Wie viel sinnvoll ist, besprechen wir beim Gratis-Check. Sie zahlen es direkt an Meta, wir bekommen davon nichts.",
-  "q5": "Ich habe schon eine Webseite. Lohnt sich das trotzdem?", "a5": "Oft ja. Beim Gratis-Check sehen wir, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.",
+  "q3": "Wie lange bin ich gebunden?", "q4": "Wie viel Werbebudget brauche ich?", "q5": "Ich habe schon eine Webseite. Lohnt sich das trotzdem?", "a5": "Oft ja. Beim Gratis-Check sehen wir, ob man sie verbessern kann oder ob ein neues Google-Profil und regelmäßige Beiträge mehr bringen.",
   "kt.p2": "Sie bekommen die Antwort innerhalb von 2 Werktagen per E-Mail.",
   "fm.geschaeft": "Name des Geschäfts", "fm.email": "Ihre E-Mail-Adresse", "fm.branche": "Branche",
   "o1": "Restaurant oder Café", "o2": "Friseur oder Kosmetik", "o3": "Lebensmittelgeschäft", "o4": "Handwerk", "o5": "Anderes",
@@ -741,18 +774,45 @@ de: {
   "t8": "Anderes"
 },
 en: {
+  "ex.news": "Newsletter: offers every Thursday",
+  "ex.menu": "Menu",
+  "ex.about": "About",
+  "ex.speise": "See the menu",
+  "ex.preise": "Prices",
+  "ex.team": "Team",
+  "ex.slots": "Free slots today",
+  "ex.angebote": "Offers",
+  "ex.filialen": "Stores",
+  "v1.u": "Breakfast and coffee, daily from 7 am.",
+  "v3.u": "This week's offers",
+  "ph.aria": "Example: a weekly sales dashboard and a successful Instagram post",
+  "ph.titel": "Sales this week",
+  "ph.live": "Live",
+  "ph.plus": "+12% vs last week",
+  "ph.d1": "Mon",
+  "ph.d2": "Tue",
+  "ph.d3": "Wed",
+  "ph.d4": "Thu",
+  "ph.d5": "Fri",
+  "ph.d6": "Sat",
+  "ph.d7": "Sun",
+  "ph.k1": "Customers",
+  "ph.k2": "Instagram reach",
+  "ph.post1": "Breakfast −20%",
+  "ph.post2": "This Saturday only",
+  "ph.komm": "comments",
+  "ph.zettel": "Numbers show what works.",
+  "nav.ablauf": "How it works",
+  "hero.cta2": "See services",
+  "hero.f2": "Fixed quote upfront",
+  "a3": "Ongoing support runs for at least 3 months, then you can cancel monthly. One-off work is paid once.",
+  "a4": "Only if you want paid ads. We discuss what makes sense during the free check. You pay it directly to Meta; we get none of it.",
   "meta.title": "MANETIQ – IT solutions for your business, wherever you are",
   "meta.desc": "Website, Google profile, social media and IT solutions for small businesses. One point of contact, fixed prices, free check.",
-  "nav.leistungen": "Services", "nav.preise": "Pricing", "nav.beispiele": "Examples", "nav.fragen": "FAQ", "nav.cta": "Free check",
+  "nav.leistungen": "Services", "nav.beispiele": "Examples", "nav.fragen": "FAQ", "nav.cta": "Free check",
   "hero.h1": "Solutions for your business. Wherever you are.",
   "hero.lead": "Website, Google profile, social media and IT for small businesses. One point of contact, fixed prices, no jargon.",
-  "hero.cta1": "Request a free check", "hero.cta2": "See pricing",
-  "hero.f1": "Online in 2 weeks", "hero.f2": "Cancel monthly after 3 months", "hero.f3": "On site or online",
-  "ph.aria": "Example: a hair salon appears at the top of a Google search, with reviews, opening hours and a website",
-  "ph.suche": "hair salon near me", "ph.r1": "4.8 (126) – Hair salon, 350 m", "ph.offen": "Open until 7 pm",
-  "ph.web": "Website", "ph.route": "Directions", "ph.anruf": "Call",
-  "ph.r2": "4.1 (9) – Hair salon, 600 m", "ph.f2": "No opening hours, no website",
-  "ph.r3": "3.9 (4) – Hair salon, 800 m", "ph.f3": "No photos", "ph.zettel": "Whoever is on top gets the call.",
+  "hero.cta1": "Request a free check", "hero.f1": "Online in 2 weeks", "hero.f3": "On site or online",
   "l.h2": "Three things that bring customers to your business",
   "l.p": "Most customers search online first. We make sure they find you, not your competitors.",
   "l1.h": "Website", "l1.p": "Fast, mobile-friendly, with everything customers want to know.",
@@ -761,20 +821,13 @@ en: {
   "l2.a": "Correct hours, including holidays", "l2.b": "Good photos of your shop and products", "l2.c": "Replies to reviews",
   "l3.h": "Social media & ads", "l3.p": "Instagram and Facebook, regularly and with a plan.",
   "l3.a": "Posts and short videos every month", "l3.b": "Ads only for people near you", "l3.c": "Newsletter for regular customers",
-  "p.h2": "Fixed prices, no surprises",
-  "p.p": "You start with the website and then decide how much we take care of each month.",
-  "einmalig": "One-time", "monatlich": "Monthly", "promonat": "per month", "marke": "Most popular",
-  "k1.name": "Start", "k1.preis": "from €690", "k1.a": "Website with 1 to 5 pages", "k1.b": "Google profile set-up", "k1.c": "Facebook and Instagram clean-up", "k1.d": "Legal notice and privacy policy", "k1.btn": "Ask about Start",
-  "k2.name": "Visible", "k2.preis": "from €199", "k2.a": "4 to 6 posts per month", "k2.b": "Website kept up to date", "k2.c": "Google profile upkeep", "k2.d": "Short report every month", "k2.btn": "Ask about Visible",
-  "k3.name": "More customers", "k3.preis": "from €399", "k3.a": "Everything in “Visible”", "k3.b": "Facebook and Instagram ads", "k3.c": "Target audiences in your area", "k3.d": "1 newsletter per month", "k3.btn": "Ask about More customers",
-  "p.note": "With “More customers”, you pay the ad budget directly to Meta, so you see every euro yourself. Minimum term for monthly packages: 3 months.",
   "a.h2": "How it works", "a.p": "You don't need any technical skills. We just need a few photos and your details.",
   "s1.h": "Free check", "s1.p": "We review your presence on Google, your website and Instagram and show you 3 concrete improvements.", "s1.d": "20 minutes, free",
   "s2.h": "Quote", "s2.p": "You get a fixed quote. No small print, no timesheets.", "s2.d": "Within 2 days",
   "s3.h": "Build", "s3.p": "We build the website, set up the Google profile and take photos if needed. You approve everything.", "s3.d": "About 2 weeks",
   "s4.h": "Ongoing care", "s4.p": "New posts every month, current offers and a short report on the results.", "s4.d": "Ongoing",
   "b.h2": "Every business looks different", "b.p": "No one-size-fits-all template: the website fits your business and your customers. Three sample designs:",
-  "v1.u": "Breakfast until 2 pm, Mon to Sun", "v1.k": "Book a table", "v2.u": "Cuts, colour, updos", "v2.k": "Book now", "v3.u": "This week's offers", "v3.k": "View flyer",
+  "v1.k": "Book a table", "v2.u": "Cuts, colour, updos", "v2.k": "Book now", "v3.k": "View flyer",
   "c1.h": "Café", "c1.p": "Menu, WhatsApp reservations, breakfast photos",
   "c2.h": "Hair salon", "c2.p": "Online booking, price list, before-and-after gallery",
   "c3.h": "Grocery store", "c3.p": "Weekly offers, newsletter, multilingual",
@@ -785,9 +838,7 @@ en: {
   "f.h2": "Frequently asked questions",
   "q1": "Do I own the website?", "a1": "Yes. The domain, website, Google profile and ad account are in your name. If you stop, you take everything with you.",
   "q2": "Do I need to do anything myself?", "a2": "Just send a few details and photos at the start, then quickly approve posts. It takes a minute by email.",
-  "q3": "How long am I tied in?", "a3": "Monthly packages run for at least 3 months, then you can cancel monthly. You pay for the Start package only once.",
-  "q4": "How much ad budget do I need?", "a4": "Only with the “More customers” package. We discuss what makes sense during the free check. You pay it directly to Meta; we get none of it.",
-  "q5": "I already have a website. Is it still worth it?", "a5": "Often, yes. In the free check we see whether it can be improved or whether a new Google profile and regular posts would do more.",
+  "q3": "How long am I tied in?", "q4": "How much ad budget do I need?", "q5": "I already have a website. Is it still worth it?", "a5": "Often, yes. In the free check we see whether it can be improved or whether a new Google profile and regular posts would do more.",
   "kt.p2": "You'll get a reply by email within 2 working days.",
   "fm.geschaeft": "Business name", "fm.email": "Your email address", "fm.branche": "Industry",
   "o1": "Restaurant or café", "o2": "Hair or beauty salon", "o3": "Grocery store", "o4": "Trades", "o5": "Other",
@@ -836,18 +887,45 @@ en: {
   "t8": "Other"
 },
 ro: {
+  "ex.news": "Newsletter: oferte în fiecare joi",
+  "ex.menu": "Meniu",
+  "ex.about": "Despre noi",
+  "ex.speise": "Vezi meniul",
+  "ex.preise": "Prețuri",
+  "ex.team": "Echipa",
+  "ex.slots": "Ore libere azi",
+  "ex.angebote": "Oferte",
+  "ex.filialen": "Magazine",
+  "v1.u": "Mic dejun și cafea, zilnic de la 7:00.",
+  "v3.u": "Ofertele săptămânii",
+  "ph.aria": "Exemplu: un dashboard cu vânzările săptămânii și o postare de succes pe Instagram",
+  "ph.titel": "Vânzări săptămâna aceasta",
+  "ph.live": "Live",
+  "ph.plus": "+12% față de săptămâna trecută",
+  "ph.d1": "Lu",
+  "ph.d2": "Ma",
+  "ph.d3": "Mi",
+  "ph.d4": "Jo",
+  "ph.d5": "Vi",
+  "ph.d6": "Sâ",
+  "ph.d7": "Du",
+  "ph.k1": "Clienți",
+  "ph.k2": "Acoperire Instagram",
+  "ph.post1": "Mic dejun −20%",
+  "ph.post2": "Doar sâmbăta aceasta",
+  "ph.komm": "comentarii",
+  "ph.zettel": "Cifrele arată ce funcționează.",
+  "nav.ablauf": "Cum lucrăm",
+  "hero.cta2": "Vedeți serviciile",
+  "hero.f2": "Ofertă fixă dinainte",
+  "a3": "Suportul continuu are o durată minimă de 3 luni, apoi îl puteți rezilia lunar. Lucrările unice le plătiți o singură dată.",
+  "a4": "Doar dacă doriți reclame plătite. Discutăm ce sumă are sens la analiza gratuită. Îl plătiți direct către Meta, noi nu primim nimic din el.",
   "meta.title": "MANETIQ – Soluții IT pentru afacerea dvs., oriunde v-ați afla",
   "meta.desc": "Site web, profil Google, social media și soluții IT pentru afaceri mici. O singură persoană de contact, prețuri fixe, analiză gratuită.",
-  "nav.leistungen": "Servicii", "nav.preise": "Prețuri", "nav.beispiele": "Exemple", "nav.fragen": "Întrebări", "nav.cta": "Analiză gratuită",
+  "nav.leistungen": "Servicii", "nav.beispiele": "Exemple", "nav.fragen": "Întrebări", "nav.cta": "Analiză gratuită",
   "hero.h1": "Soluții pentru afacerea dvs. Oriunde v-ați afla.",
   "hero.lead": "Site web, profil Google, social media și IT pentru afaceri mici. O singură persoană de contact, prețuri fixe, fără jargon tehnic.",
-  "hero.cta1": "Cereți analiza gratuită", "hero.cta2": "Vedeți prețurile",
-  "hero.f1": "Online în 2 săptămâni", "hero.f2": "Reziliabil lunar după 3 luni", "hero.f3": "La fața locului sau online",
-  "ph.aria": "Exemplu: o frizerie apare prima în căutarea Google, cu recenzii, program și site",
-  "ph.suche": "frizerie în apropiere", "ph.r1": "4,8 (126) – Frizerie, 350 m", "ph.offen": "Deschis până la 19:00",
-  "ph.web": "Site", "ph.route": "Traseu", "ph.anruf": "Sună",
-  "ph.r2": "4,1 (9) – Frizerie, 600 m", "ph.f2": "Fără program, fără site",
-  "ph.r3": "3,9 (4) – Frizerie, 800 m", "ph.f3": "Fără fotografii", "ph.zettel": "Cine e primul primește apelul.",
+  "hero.cta1": "Cereți analiza gratuită", "hero.f1": "Online în 2 săptămâni", "hero.f3": "La fața locului sau online",
   "l.h2": "Trei lucruri care aduc clienți în afacerea dvs.",
   "l.p": "Majoritatea clienților caută mai întâi online. Ne asigurăm că vă găsesc pe dvs., nu concurența.",
   "l1.h": "Site web", "l1.p": "Rapid, arată bine pe telefon, cu tot ce vor clienții să știe.",
@@ -856,20 +934,13 @@ ro: {
   "l2.a": "Program corect, inclusiv de sărbători", "l2.b": "Fotografii bune cu magazinul și produsele", "l2.c": "Răspunsuri la recenzii",
   "l3.h": "Social media și reclame", "l3.p": "Instagram și Facebook, regulat și cu un plan.",
   "l3.a": "Postări și clipuri scurte în fiecare lună", "l3.b": "Reclame doar pentru oamenii din zona dvs.", "l3.c": "Newsletter pentru clienții fideli",
-  "p.h2": "Prețuri fixe, fără surprize",
-  "p.p": "Începeți cu site-ul și apoi decideți cât preluăm noi în fiecare lună.",
-  "einmalig": "O singură dată", "monatlich": "Lunar", "promonat": "pe lună", "marke": "Cel mai ales",
-  "k1.name": "Start", "k1.preis": "de la 690 €", "k1.a": "Site cu 1–5 pagini", "k1.b": "Configurarea profilului Google", "k1.c": "Ordonarea paginilor Facebook și Instagram", "k1.d": "Date legale și politică de confidențialitate", "k1.btn": "Solicitați Start",
-  "k2.name": "Vizibil", "k2.preis": "de la 199 €", "k2.a": "4–6 postări pe lună", "k2.b": "Actualizarea site-ului", "k2.c": "Întreținerea profilului Google", "k2.d": "Raport scurt în fiecare lună", "k2.btn": "Solicitați Vizibil",
-  "k3.name": "Mai mulți clienți", "k3.preis": "de la 399 €", "k3.a": "Tot ce include „Vizibil”", "k3.b": "Reclame pe Facebook și Instagram", "k3.c": "Public țintă din zona dvs.", "k3.d": "1 newsletter pe lună", "k3.btn": "Solicitați Mai mulți clienți",
-  "p.note": "La „Mai mulți clienți”, bugetul de reclame îl plătiți direct către Meta, ca să vedeți fiecare euro. Durata minimă pentru pachetele lunare: 3 luni.",
   "a.h2": "Cum funcționează", "a.p": "Nu aveți nevoie de cunoștințe tehnice. Avem nevoie doar de câteva fotografii și de informațiile dvs.",
   "s1.h": "Analiză gratuită", "s1.p": "Analizăm prezența dvs. pe Google, pe site și pe Instagram și vă arătăm 3 îmbunătățiri concrete.", "s1.d": "20 de minute, gratuit",
   "s2.h": "Ofertă", "s2.p": "Primiți o ofertă fixă. Fără clauze ascunse, fără facturare pe oră.", "s2.d": "În maximum 2 zile",
   "s3.h": "Implementare", "s3.p": "Construim site-ul, configurăm profilul Google și facem fotografii, dacă e nevoie. Dvs. aprobați totul.", "s3.d": "Aproximativ 2 săptămâni",
   "s4.h": "Suport continuu", "s4.p": "Postări noi în fiecare lună, oferte actuale și un raport scurt despre rezultate.", "s4.d": "Permanent",
   "b.h2": "Fiecare afacere arată altfel", "b.p": "Nu un șablon pentru toți: site-ul se potrivește afacerii și clienților dvs. Trei exemple de design:",
-  "v1.u": "Mic dejun până la 14:00, Lu–Du", "v1.k": "Rezervă o masă", "v2.u": "Tuns, vopsit, coafuri", "v2.k": "Programează-te", "v3.u": "Ofertele săptămânii", "v3.k": "Vezi catalogul",
+  "v1.k": "Rezervă o masă", "v2.u": "Tuns, vopsit, coafuri", "v2.k": "Programează-te", "v3.k": "Vezi catalogul",
   "c1.h": "Cafenea", "c1.p": "Meniu, rezervări pe WhatsApp, fotografii cu micul dejun",
   "c2.h": "Frizerie", "c2.p": "Programare online, listă de prețuri, galerie înainte și după",
   "c3.h": "Magazin alimentar", "c3.p": "Oferte săptămânale, newsletter, în mai multe limbi",
@@ -880,9 +951,7 @@ ro: {
   "f.h2": "Întrebări frecvente",
   "q1": "Site-ul îmi aparține?", "a1": "Da. Domeniul, site-ul, profilul Google și contul de reclame sunt pe numele dvs. Dacă renunțați, luați totul cu dvs.",
   "q2": "Trebuie să fac ceva eu?", "a2": "Doar să trimiteți la început câteva informații și fotografii, apoi să aprobați rapid postările. Durează un minut, prin e-mail.",
-  "q3": "Pentru cât timp mă angajez?", "a3": "Pachetele lunare au o durată minimă de 3 luni, apoi le puteți rezilia lunar. Pachetul Start îl plătiți o singură dată.",
-  "q4": "Ce buget de reclame îmi trebuie?", "a4": "Doar la pachetul „Mai mulți clienți”. Discutăm ce sumă are sens la analiza gratuită. Îl plătiți direct către Meta, noi nu primim nimic din el.",
-  "q5": "Am deja un site. Merită totuși?", "a5": "Adesea, da. La analiza gratuită vedem dacă poate fi îmbunătățit sau dacă un profil Google nou și postări regulate ar aduce mai mult.",
+  "q3": "Pentru cât timp mă angajez?", "q4": "Ce buget de reclame îmi trebuie?", "q5": "Am deja un site. Merită totuși?", "a5": "Adesea, da. La analiza gratuită vedem dacă poate fi îmbunătățit sau dacă un profil Google nou și postări regulate ar aduce mai mult.",
   "kt.p2": "Primiți răspunsul pe e-mail în maximum 2 zile lucrătoare.",
   "fm.geschaeft": "Numele afacerii", "fm.email": "Adresa dvs. de e-mail", "fm.branche": "Domeniu",
   "o1": "Restaurant sau cafenea", "o2": "Frizerie sau cosmetică", "o3": "Magazin alimentar", "o4": "Meșteșuguri și instalații", "o5": "Altceva",
@@ -963,6 +1032,46 @@ function setzeSprache(l) {
 document.querySelectorAll(".sprache button").forEach(b => b.addEventListener("click", () => { setzeSprache(b.dataset.lang); merken(b.dataset.lang); }));
 setzeSprache(startSprache());
 document.getElementById("jahr").textContent = new Date().getFullYear();
+
+
+/* ===== Bewegung beim Scrollen ===== */
+(function () {
+  const ruhig = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const kopf = document.querySelector(".kopf");
+  const balken = document.querySelector(".fortschritt");
+  const dash = document.querySelector(".dash"), post = document.querySelector(".post"), zettel = document.querySelector(".zettel");
+  let letztes = window.scrollY, wartet = false;
+
+  function aktualisieren() {
+    const y = window.scrollY;
+    kopf.classList.toggle("klein", y > 10);
+    // Kopfzeile beim Runterscrollen ausblenden, beim Hochscrollen zeigen
+    if (y > 160 && y > letztes + 4 && !kopf.contains(document.activeElement)) kopf.classList.add("weg");
+    else if (y < letztes - 4 || y <= 160) kopf.classList.remove("weg");
+    letztes = y;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    balken.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
+    // leichter Tiefeneffekt in der Startgrafik
+    if (!ruhig && y < 900 && window.innerWidth > 980) {
+      dash.style.transform = "translateY(" + (y * -0.06) + "px)";
+      post.style.transform = "translateY(" + (y * -0.16) + "px) rotate(-4deg)";
+      zettel.style.transform = "translateY(" + (y * -0.1) + "px) rotate(3deg)";
+    }
+    wartet = false;
+  }
+  window.addEventListener("scroll", () => { if (!wartet) { wartet = true; requestAnimationFrame(aktualisieren); } }, { passive: true });
+  aktualisieren();
+
+  // Inhalte beim Reinscrollen einblenden, gestaffelt
+  const gruppen = [".kopfzeile", ".leistungen .leistung", ".it-grid .it-karte", ".it-cta", ".ablauf li", ".beispiele .fenster", ".ueber > div", ".faq details", ".kontakt .wrap > div", "#check"];
+  const ziele = [];
+  gruppen.forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.classList.add("zeigen"); el.style.setProperty("--i", i % 4); ziele.push(el); }));
+  if (ruhig || !("IntersectionObserver" in window)) { ziele.forEach(el => el.classList.add("da")); return; }
+  const beob = new IntersectionObserver(eintraege => eintraege.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("da"); beob.unobserve(e.target); }
+  }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  ziele.forEach(el => beob.observe(el));
+})();
 
 /* ===== Formular ===== */
 document.querySelectorAll("[data-thema]").forEach(a => a.addEventListener("click", () => {
