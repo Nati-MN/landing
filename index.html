@@ -352,6 +352,35 @@ footer{background:var(--blau-dunkel)}
   .dash,.post,.zettel{will-change:transform}
 }
 
+
+/* Fixierte Leiste mit Tools unten */
+.werkzeuge{position:fixed;left:0;right:0;bottom:0;z-index:15;display:flex;align-items:center;gap:18px;height:54px;padding:0 24px;background:rgba(6,20,41,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--linie)}
+.wz-label{flex:none;font-size:13.5px;font-weight:600;color:var(--grau);white-space:nowrap}
+.wz-band{flex:1;overflow:hidden;min-width:0}
+.wz-spur{display:flex;width:max-content}
+.wz-reihe{display:flex;align-items:center;gap:10px;list-style:none;margin:0;padding:0 10px 0 0}
+.wz-chip{display:flex;align-items:center;gap:6px;height:32px;padding:0 10px;background:#fff;border-radius:8px}
+.wz-chip img{height:20px;width:auto;display:block}
+.wz-text{font-size:12.5px;font-weight:650;color:#111}
+.wz-nur-text .wz-text{font-size:14px;font-weight:750;font-stretch:110%;letter-spacing:.01em}
+body{padding-bottom:54px}
+.wz-spur .wz-reihe+.wz-reihe{display:none}
+@media (max-width:1100px){
+  .wz-label{display:none}
+  .werkzeuge{padding:0;height:48px}
+  body{padding-bottom:48px}
+  .wz-spur .wz-reihe+.wz-reihe{display:flex}
+  .wz-band{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+}
+@media (max-width:1100px) and (prefers-reduced-motion:no-preference){
+  .wz-spur{animation:laufband 28s linear infinite}
+  .wz-band:hover .wz-spur{animation-play-state:paused}
+  @keyframes laufband{to{transform:translateX(-50%)}}
+}
+@media (max-width:1100px) and (prefers-reduced-motion:reduce){
+  .wz-band{overflow-x:auto}
+}
+
 /* Sprachumschalter */
 .sprache{display:flex;gap:2px;border:1px solid var(--linie);border-radius:999px;padding:3px}
 .sprache button{font:inherit;font-size:13.5px;font-weight:650;color:var(--grau);background:none;border:0;border-radius:999px;padding:6px 10px;cursor:pointer;line-height:1}
@@ -644,6 +673,11 @@ footer{background:var(--blau-dunkel)}
 
 </main>
 
+<aside class="werkzeuge" aria-labelledby="wz-label">
+  <span class="wz-label" id="wz-label" data-i18n="tools.label">Wir arbeiten mit</span>
+  <div class="wz-band"><div class="wz-spur"><ul class="wz-reihe"><li class="wz-chip"><img src="img/tools/n8n.png" alt="n8n" width="253" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/canva.png" alt="Canva" width="208" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/odoo.png" alt="Odoo" width="217" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/hikvision.png" alt="Hikvision" width="495" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/openai.png" alt="OpenAI ChatGPT" width="73" height="72" loading="lazy"><span class="wz-text">ChatGPT</span></li><li class="wz-chip"><img src="img/tools/claude.png" alt="Claude" width="316" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/github.png" alt="GitHub" width="303" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/wix.png" alt="Wix" width="282" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/runway.png" alt="Runway" width="337" height="72" loading="lazy"></li><li class="wz-chip"><img src="img/tools/html-css-js.png" alt="HTML, CSS, JavaScript" width="173" height="72" loading="lazy"></li></ul></div></div>
+</aside>
+
 <footer>
   <div class="wrap">
     <div><img class="fuss-logo" src="img/logo-voll.png" alt="MANETIQ – IT Services &amp; Solutions" width="1220" height="225"><br><span>© <span id="jahr"></span> MANETIQ</span></div>
@@ -662,6 +696,7 @@ const WEB3FORMS_KEY = "d2e6b899-92d5-470a-8cb9-a9fa93ca5ffd";
 /* ===== Texte in 3 Sprachen ===== */
 const T = {
 de: {
+  "tools.label": "Wir arbeiten mit",
   "ex.news": "Newsletter: Angebote jeden Donnerstag",
   "ex.menu": "Karte",
   "ex.about": "Über uns",
@@ -775,6 +810,7 @@ de: {
   "t8": "Anderes"
 },
 en: {
+  "tools.label": "Tools we work with",
   "ex.news": "Newsletter: offers every Thursday",
   "ex.menu": "Menu",
   "ex.about": "About",
@@ -888,6 +924,7 @@ en: {
   "t8": "Other"
 },
 ro: {
+  "tools.label": "Lucrăm cu",
   "ex.news": "Newsletter: oferte în fiecare joi",
   "ex.menu": "Meniu",
   "ex.about": "Despre noi",
@@ -1072,6 +1109,17 @@ document.getElementById("jahr").textContent = new Date().getFullYear();
     if (e.isIntersecting) { e.target.classList.add("da"); beob.unobserve(e.target); }
   }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   ziele.forEach(el => beob.observe(el));
+})();
+
+
+/* Tool-Leiste: Reihe doppeln, damit das Laufband nahtlos läuft */
+(function () {
+  const spur = document.querySelector(".wz-spur");
+  if (!spur) return;
+  const kopie = spur.firstElementChild.cloneNode(true);
+  kopie.setAttribute("aria-hidden", "true");
+  kopie.querySelectorAll("img").forEach(i => i.alt = "");
+  spur.appendChild(kopie);
 })();
 
 /* ===== Formular ===== */
